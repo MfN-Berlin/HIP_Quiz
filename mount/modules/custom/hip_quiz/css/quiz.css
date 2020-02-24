@@ -1,0 +1,45 @@
+#instructions {
+    display: block;
+}
+
+#play {
+    display: none;
+}
+
+.wrapper {
+    padding: 0.5em;
+    text-align: center;
+    background:	#fff;
+    color:	#333;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 1px rgba(0,0,0,0.12);
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    padding-top: 1em;
+    padding-bottom: 3em;
+}
+
+.wrapper p {
+    text-align: left;
+}
+
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    color:#fff;
+    border-color:#7da30b;
+    background-color:#7da30b;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-image: none;
+    margin-top: 4px;
+    margin-bottom: 0px;
+}
+
+.button:hover {
+    color:#fff;
+    background-color:#7da30b;
+    box-shadow: 0px 4px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 1px rgba(0,0,0,0.12);
+    margin-top: 0px;
+    margin-bottom: 4px;
+}

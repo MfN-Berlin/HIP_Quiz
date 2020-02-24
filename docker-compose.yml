@@ -1,0 +1,21 @@
+version: '3'
+services:
+   db:
+      image: mariadb:10.4
+      container_name: hip_quiz_db
+      environment:
+        MYSQL_ROOT_PASSWORD: qq0uei
+      volumes:
+        - "./mount/db:/var/lib/mysql"
+
+   drupal:
+      image: hip_quiz:latest
+      container_name: hip_quiz
+      ports:
+         - "9092:80"
+      links:
+         - db
+      volumes:
+        - "./mount/default:/var/www/html/sites/default/"
+        - "./mount/modules:/var/www/html/modules"
+        - "./mount/libraries:/var/www/html/libraries"

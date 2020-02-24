@@ -1,0 +1,6 @@
+audiogrambase.content:
+  path: '/quiz'
+  defaults:
+    _controller: '\Drupal\hip_quiz\Controller\QuizController::play'
+  requirements:
+    _permission: 'access content'
