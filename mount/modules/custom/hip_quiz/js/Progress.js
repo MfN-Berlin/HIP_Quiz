@@ -12,3 +12,7 @@ class Progress {
     }
 
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  exports.Progress = Progress; 
+}

@@ -30,3 +30,8 @@ prepare_staging_files:
 	docker save hip_quiz | gzip -c > /tmp/hip_quiz.tar.gz
 	docker save mariadb:10.4  | gzip -c > /tmp/mariadb.tar.gz
 	tar -zcf /tmp/mount.tar.gz ./mount
+
+# Run javascript tests
+test:
+	docker exec -ti hip_quiz script -q -c "cd /var/www/html/modules/custom/hip_quiz/tests && qunit test_*.js"
+

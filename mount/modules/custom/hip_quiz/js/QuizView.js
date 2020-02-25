@@ -26,3 +26,7 @@ class QuizView extends Observer {
 	throw "unimplemented";
     }
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  exports.QuizView = QuizView; 
+}

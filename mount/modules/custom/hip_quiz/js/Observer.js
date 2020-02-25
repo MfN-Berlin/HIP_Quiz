@@ -6,3 +6,7 @@ class Observer {
 	throw "unimplemented";
     }
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  exports.Observer = Observer; 
+}

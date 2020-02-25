@@ -39,3 +39,7 @@ class QuizController {
 	throw "unimplemented";
     }
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  exports.QuizController = QuizController; 
+}

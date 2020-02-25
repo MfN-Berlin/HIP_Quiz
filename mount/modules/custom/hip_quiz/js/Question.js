@@ -14,3 +14,7 @@ class Question {
 	this.chosenAnswer = chosenAnswer;
     }
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  exports.Question = Question; 
+}

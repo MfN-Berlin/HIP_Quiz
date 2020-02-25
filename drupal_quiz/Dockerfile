@@ -15,3 +15,8 @@ RUN export EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installe
 RUN \
 php composer.phar require drush/drush \
 && php composer.phar require drupal/quiz:5.x-dev
+
+# install QUnit
+curl -sL https://deb.nodesource.com/setup_13.x | bash -
+apt-get install -y nodejs
+npm install -g qunit

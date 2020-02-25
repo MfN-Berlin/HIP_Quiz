@@ -44,3 +44,7 @@ class QuizModel extends Observable {
 	throw "unimplemented";
     }
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  exports.QuizModel = QuizModel; 
+}

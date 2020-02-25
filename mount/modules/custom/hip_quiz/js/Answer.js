@@ -10,3 +10,7 @@ class Answer {
 	this.text = text;
     }
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  exports.Answer = Answer; 
+}

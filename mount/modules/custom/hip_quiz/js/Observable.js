@@ -27,3 +27,7 @@ class Observable {
 	throw "unimplemented";
     }
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  exports.Observable = Observable; 
+}
