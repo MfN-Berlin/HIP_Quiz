@@ -2,7 +2,7 @@ FROM drupal:8.7
 
 # install git
 RUN apt-get update \
-&& apt-get -y install wget git nano zip
+&& apt-get -y install wget git nano zip curl
 
 # install composer
 RUN export EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installer.sig) \
@@ -17,6 +17,6 @@ php composer.phar require drush/drush \
 && php composer.phar require drupal/quiz:5.x-dev
 
 # install QUnit
-curl -sL https://deb.nodesource.com/setup_13.x | bash -
-apt-get install -y nodejs
-npm install -g qunit
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
+RUN apt-get install -y nodejs
+RUN npm install -g qunit
