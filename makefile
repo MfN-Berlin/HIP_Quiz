@@ -33,5 +33,5 @@ prepare_staging_files:
 
 # Run javascript tests
 test:
-	docker exec -ti hip_quiz script -q -c "cd /var/www/html/modules/custom/hip_quiz/tests && qunit test_*.js"
-
+# docker exec -ti hip_quiz script -q -c "cd /var/www/html/modules/custom/hip_quiz/tests && qunit test_*.js"
+	echo "Open http://localhost:9092/modules/custom/hip_quiz/tests/test_suite.html"

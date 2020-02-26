@@ -6,13 +6,14 @@ Javacript Progress class for the Quiz
 
 class Progress {
     constructor() {
+	this.started = false;
 	this.qTotal = null
 	this.qAnswered = null
 	this.qCorrectRow = null
     }
 
-}
-
-if (typeof module !== 'undefined' && module.exports) {
-  exports.Progress = Progress; 
+    /** Returns true if quiz has started, false otherwise.*/
+    quizStarted() {
+	return this.started;
+    }
 }

@@ -8,8 +8,23 @@ class QuizView extends Observer {
     
     constructor() {
 	super();
+	this.uiTexts = [];
     }
 
+    setUiTexts(uiTexts) {
+	this.uiTexts = uiTexts;
+    }
+    
+    update(progress) {
+	if (!progress.quizStarted()) {
+	    this.showQuizInstructions();
+	}
+    }
+    
+    showQuizInstructions() {
+	document.getElementById("instructions").innerHTML = this.uiTexts.start;
+    }
+    
     showCurrentQuestion() {
 	throw "unimplemented";
     }
@@ -25,8 +40,4 @@ class QuizView extends Observer {
     showQuizFeedback() {
 	throw "unimplemented";
     }
-}
-
-if (typeof module !== 'undefined' && module.exports) {
-  exports.QuizView = QuizView; 
 }

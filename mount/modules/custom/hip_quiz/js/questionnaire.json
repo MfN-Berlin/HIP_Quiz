@@ -1,0 +1,169 @@
+{
+    "ui_texts": {
+    "start": "<img src=\"/modules/custom/hip_quiz/images/180109_hearing_in_penguins.png\" /><h1>Woher stammt dieses Geräusch?</h1><p>Unter der Meeresoberfläche ist es nie still. Vielfältige Geräusche sind in der Unterwasserwelt ständig präsent und werden natürlicherweise durch Wind, Wellen, Eis und Donner sowie von Tieren erzeugt.</p><p>Der Mensch beeinflusst die Meeresumwelt durch unterschiedlichste Aktivitäten. Die Ozeane werden durch die Zufuhr von Schadstoffen, Schwermetallen, Nährstoffen, Plastikmüll, aber auch durch Lärm schwer belastet.</p><p>Vor allem die Schifffahrt, das Erkunden von Rohstoffen im Meeresboden, militärische Aktivitäten sowie der Bau von Windkraftanlagen und Bohrinseln trägt zum Lärm im Meer bei.</p><input type=\"button\" class=\"button\" id=\"start_quiz\" value=\"Quiz starten\"/>",
+    "help" : "Zum Spielen einfach das Hörbeispiel starten und die richtige Lösung mit Klick auf das Bild auswählen!",
+    "help_long" : "<h1>Spielerklärung</h1> Es wird gespielt, indem man sich das Hörbeispiel anhört und danach eine der beiden Antwortmöglichkeiten auswählt, indem man auf das entsprechende Bild klickt. Zum Fortfahren wird der \"Weiter\" Button genutzt.<p>Die Hörbeispiele werden entweder automatisch abgespielt, oder können über den \"Play\" Button gestartet werden. Der \"Stop\" Button kann die Wiedergabe jederzeit beenden.</p><p>Gelegentlich erscheint nach erfolgter Beantwortung einer Frage auch ein \"Gegenbeispiel\" Button. Dieser spielt ein Hörbeispiel der falschen Antwortmöglichkeit ab.</p><p>Nach beantwortung aller Fragen erfolgt eine kurze Auswertung.</p><h1>Zusätliche Schaltflächen</h1>Der \"Schliessen\" Button schliesst das Programm.<p>Mit dem \"?\" Button kann man sich diese Programmhilfe jederzeit wieder anzeigen lassen.</p><p>Bei weiteren Fragen wenden Sie sich bitte an einen Mitarbeiter des Meeresmuseums. Er wird ihnen gerne weitere Fragen beantworten.</p>",
+    "end" : "Glückswunsch, Sie haben das Quiz beendet. Es wurden {0} von {1} Fragen richtig beantwortet!"
+    },
+    "settings" : {
+	"num_questions" : 6
+    },
+    "questionnaire" : [
+	{
+	    "qid": 1,
+	    "correct": {
+		"text": "Die tiefen Grunzlaute nutzt der Finnwal, um sich über Kilometer hinweg zu verständigen!",
+		"audio": "finnwal.mp3",
+		"image": "finnwal"
+	    },
+	    "wrong": {
+		"audio": "sonar",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 2,
+	    "correct": {
+		"text": "Durch das deutliche Grunzen lassen sich Bartenwale auch einfach mit Schweinen verwechseln!",
+		"audio": "buckelwal",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "wollschwein",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 3,
+	    "correct": {
+		"text": "Auch Unterwasser hört man den Knall eines Blitzes. Und da sich Schallwellen im Wasser wesentlich schneller ausbreiten als an Land sogar in einem noch größeren Umfeld.",
+		"audio": "blitz",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "airgun",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 4,
+	    "correct": {
+		"text": "Der Schweinswal nutzt Echoortung um sich Unterwasser zu orientieren. Dafür verarbeitet sein Hirn die Echos von sehr hohen Klicklauten, welche er selbst aussendet, zu einem Bild. Er sieht mit seinem Gehör!",
+		"audio": "schweinswal",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "fliege",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 5,
+	    "correct": {
+		"text": "Schwertwale nutzen zur Kommunikation auch sogenannte Zwitscher-Laute. Diese sind dem Vogelgezwitscher sehr ähnlich.",
+		"audio": "schwertwal",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "papageien",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 6,
+	    "correct": {
+		"text": "Dieses Geräusch stammt von einer gerade auftauchenden Hawaii-Mönchsrobbe. Es wird häufiger beobachtet, dass sie solche Laute ausstoßen. Nur warum sie das tun, ist noch unklar.",
+		"audio": "mönchsrobbe",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "rov",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 7,
+	    "correct": {
+		"text": "Die Laute des Motors und der durch das Wasser wirbelnden Schiffschraube produzieren einen riesigen Lärm, der durch die gute Schallwellenübertragungsfähigkeit des Wassers noch weithin hörbar ist.",
+		"audio": "schlauchboot",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "pilotwale",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 8,
+	    "correct": {
+		"text": "Wenn Pistolenkrebse jagen, betäuben sie ihre Beute mit einem lauten Knall ihrer großen Schere - wenn sich auf einem Gebiet viele Pistolenkrebse befinden, kann das schon mal ein riesen Lärm werden!",
+		"audio": "pistolenkrebse",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "regen",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 9,
+	    "correct": {
+		"text": "Zwitschern ist neben dem Klicken (siehe Schweinswal) und dem Grunzen (siehe Finn- und Buckelwal) eine weitere Art, wie sich Wale verständigen können. Selbst ein riesiges Tier wie der Pottwal kann solche feinen Laute ausstoßen. *Pottwal, Drossel, Fing und Star...*",
+		"audio": "pottwal",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "amsel",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 10,
+	    "correct": {
+		"text": "Ein weiterer Krebs kann mit seinen Geräuschen beeindrucken. Das Knarzen des Hummers wird durch eine Art eingebaute Raspel erzeugt, über die er streicht.",
+		"audio": "hummer",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "ente",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 11,
+	    "correct": {
+		"text": "Um das tiefe Brummen zweier aneinander reibender Eisgiganten hörbar zu machen, musste es mit 20facher Geschwindigkeit abgespielt werden.",
+		"audio": "eisbergkollision",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "seebeben",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 12,
+	    "correct": {
+		"text": "Eine spezielle Unterart der Zwergwale macht diese sogenannten Star-Wars-Laute. Wieder wird deutlich, welch riesige Bandbreite an Lauten von Lebewesen unter Wasser produziert wird.",
+		"audio": "zwergwal",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "starwars",
+		"image": ""
+	    }
+	},
+	{
+	    "qid": 13,
+	    "correct": {
+		"text": "Das waren Paarungslaute eines Walrossmännchens - das ein Spieler die schon mal gehört hat, kommt selten vor. Im Gegenbeispiel wird im Verlauf ein Blasenschleier aktiviert um den Lärmpegel des Baustelle zu senken.",
+		"audio": "walross",
+		"image": ""
+	    },
+	    "wrong": {
+		"audio": "pfahlgründung",
+		"image": ""
+	    }
+	}
+    ]
+}

@@ -7,7 +7,6 @@
 }
 
 .wrapper {
-    padding: 0.5em;
     text-align: center;
     background:	#fff;
     color:	#333;
@@ -42,4 +41,16 @@
     box-shadow: 0px 4px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 1px rgba(0,0,0,0.12);
     margin-top: 0px;
     margin-bottom: 4px;
+}
+
+@media (max-width: 375px) {
+    .wrapper {
+	padding: 0.5em;
+    }
+}
+
+@media (min-width: 375px) {
+    .wrapper {
+	padding: 1em;
+    }
 }

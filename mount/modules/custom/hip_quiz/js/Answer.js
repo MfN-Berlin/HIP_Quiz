@@ -5,9 +5,10 @@ Javacript Answer class for the Quiz
 */
 0
 class Answer {
-    constructor(id, text) {
-	this.id = id
+    constructor(text, audio, image) {
 	this.text = text;
+	this.audio = audio;
+	this.image = image;
     }
 }
 

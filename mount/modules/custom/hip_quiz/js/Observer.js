@@ -2,11 +2,8 @@
    Observer class (actually interface) for MVC
 */
 class Observer {
-    update() {
-	throw "unimplemented";
+    update(progress) {
+	throw "this method is abstract and should be overwritten by the implementing class";
     }
 }
 
-if (typeof module !== 'undefined' && module.exports) {
-  exports.Observer = Observer; 
-}

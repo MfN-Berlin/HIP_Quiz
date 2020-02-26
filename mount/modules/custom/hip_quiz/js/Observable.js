@@ -2,21 +2,29 @@
    Observable class for MVC
 */
 class Observable {
+
+    constructor(model, view) {
+	this.observer = [];
+	this.changed = false;
+    }
+
     
-    addObserver() {
-	throw "unimplemented";
+    addObserver(obj) {
+	this.observer.push(obj);
     }
 
     setChanged() {
-	throw "unimplemented";
+	this.changed = true;
     }
 
     clearChanged() {
-	throw "unimplemented";
+	this.changed = false;
     }
 
-    notifyObservers() {
-	throw "unimplemented";
+    notifyObservers(progress) {
+	for (var i = 0; i < this.observer.length; i++) {
+	    this.observer[i].update(progress);
+	}
     }
 
     countObservers() {
@@ -28,6 +36,3 @@ class Observable {
     }
 }
 
-if (typeof module !== 'undefined' && module.exports) {
-  exports.Observable = Observable; 
-}

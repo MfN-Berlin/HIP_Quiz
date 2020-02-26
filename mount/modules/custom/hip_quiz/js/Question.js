@@ -5,13 +5,10 @@ Javacript Question class for the Quiz
 */
 
 class Question {
-    constructor(text, audio, image, correctAnswer, wrongAnswer, chosenAnswer) {
-	this.text = text;
-	this.audio = audio;
-	this.image = image;
+    constructor(id, correctAnswer, wrongAnswer, chosenAnswer) {
+	this.id = id;
 	this.correctAnswer = correctAnswer;
 	this.wrongAnswer = wrongAnswer;
-	this.chosenAnswer = chosenAnswer;
     }
 }
 

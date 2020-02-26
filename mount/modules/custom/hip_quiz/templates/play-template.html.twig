@@ -1,11 +1,13 @@
 <!--
-@see https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine/tree/master/docs
--->
+    @see https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine/tree/master/docs
+  -->
 <link rel="stylesheet" type="text/css" href="/modules/custom/hip_quiz/css/quiz.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/modules/custom/hip_quiz/js/Observer.js"></script>
 <script src="/modules/custom/hip_quiz/js/Observable.js"></script>
 <script src="/modules/custom/hip_quiz/js/Progress.js"></script>
 <script src="/modules/custom/hip_quiz/js/Question.js"></script>
+<script src="/modules/custom/hip_quiz/js/Answer.js"></script>
 <script src="/modules/custom/hip_quiz/js/QuizModel.js"></script>
 <script src="/modules/custom/hip_quiz/js/QuizView.js"></script>
 <script src="/modules/custom/hip_quiz/js/QuizController.js"></script>
@@ -13,40 +15,32 @@
 <script language="javascript">
   // Start the game when button is pressed
   document.addEventListener('DOMContentLoaded', function() {
-      button = document.getElementById("start_quiz");
-      button.addEventListener("click", function() {
-	  try {
-	      var view = new QuizView();
-	      var model = new QuizModel();
-	      var controller = new QuizController(model, view);
-	      
-	  } catch(err) {
-  	      console.log(err);
-  	      document.getElementById("messages").innerHTML += "Script error";
-	  }
-      });
+      try {
+	  var model = new QuizModel();
+	  var view = new QuizView();
+	  model.addObserver(view);
+	  var controller = new QuizController(model, view);
+	  controller.loadConfiguration("/modules/custom/hip_quiz/js/questionnaire.json");
+	  model.reset();
+	  button = document.getElementById("start_quiz");
+	  button.addEventListener("click", function() {
+	      console.log(controller);
+	  });
+
+      } catch(err) {
+  	  console.log(err);
+  	  document.getElementById("messages").innerHTML += "Script error";
+      }
   });
 </script>
 
 
-<div id="instructions">
-  <div class="wrapper">
-    <img src="/modules/custom/hip_quiz/images/180109_hearing_in_penguins.png" />
-    <h1>Woher stammt dieses Geräusch?</h1>
-    <p>
-    Unter der Meeresoberfläche ist es nie still. Vielfältige Geräusche sind in der Unterwasserwelt ständig präsent und werden natürlicherweise durch Wind, Wellen, Eis und Donner sowie von Tieren erzeugt.
-    </p>
-    <p>
-    Der Mensch beeinflusst die Meeresumwelt durch unterschiedlichste Aktivitäten. Die Ozeane werden durch die Zufuhr von Schadstoffen, Schwermetallen, Nährstoffen, Plastikmüll, aber auch durch Lärm schwer belastet.
-    </p>
-    <p>
-    Vor allem die Schifffahrt, das Erkunden von Rohstoffen im Meeresboden, militärische Aktivitäten sowie der Bau von Windkraftanlagen und Bohrinseln trägt zum Lärm im Meer bei.
-    </p>
-    <input type="button" class="button" id="start_quiz" value="Quiz starten"/>
+<div class="wrapper">
+  <div id="instructions">
   </div>
-</div>
 
-<div id="play">
-</div>
+  <div id="play">
+  </div>
 
-<div id="messages"></div>
+  <div id="messages"></div>
+</div>

@@ -8,28 +8,17 @@ class QuizModel extends Observable {
 
     constructor() {
 	super();
-	this.question = []
-	this.progress = new Progress()
+	this.question = [];
     }
 
-    selectQuestions() {
-	throw "unimplemented";
-    }
-
-    randomizeQuestions() {
-	throw "unimplemented";
-    }
-
-    selectWrongChoice() {
-	throw "unimplemented";
-    }
-
-    resetScore() {
-	throw "unimplemented";
-    }
-
-    resetAnswers() {
-	throw "unimplemented";
+    /**
+     * Resets progress and questions, notifies observers.
+     */
+    reset() {
+	this.progress = new Progress();
+	this.question = [];
+	this.setChanged();
+	this.notifyObservers(this.progress);
     }
 
     getNextQuestion() {
@@ -45,6 +34,3 @@ class QuizModel extends Observable {
     }
 }
 
-if (typeof module !== 'undefined' && module.exports) {
-  exports.QuizModel = QuizModel; 
-}
