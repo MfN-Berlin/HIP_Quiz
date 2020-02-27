@@ -22,8 +22,10 @@ class Observable {
     }
 
     notifyObservers(progress) {
-	for (var i = 0; i < this.observer.length; i++) {
-	    this.observer[i].update(progress);
+	if (this.changed) {
+	    for (var i = 0; i < this.observer.length; i++) {
+		this.observer[i].update(progress);
+	    }
 	}
     }
 

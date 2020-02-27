@@ -15,13 +15,31 @@ class QuizModel extends Observable {
      * Resets progress and questions, notifies observers.
      */
     reset() {
-	this.progress = new Progress();
+	this.progress = new Progress(0);
 	this.question = [];
 	this.setChanged();
 	this.notifyObservers(this.progress);
+	this.clearChanged();
     }
 
-    getNextQuestion() {
+    /**
+     * Adds a question to the current game.
+
+     @param Question question
+     */
+    addQuestion(question) {
+	this.question.push(question);
+	this.progress.qTotal = this.progress.qTotal + 1;
+    }
+
+    gotoFirstQuestion() {
+	this.setChanged();
+	this.progress.start();
+	this.notifyObservers(this.progress);
+	this.clearChanged();
+    }
+    
+    gotoNextQuestion() {
 	throw "unimplemented";
     }
 

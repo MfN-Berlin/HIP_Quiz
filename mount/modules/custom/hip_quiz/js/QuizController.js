@@ -35,19 +35,19 @@ class QuizController {
 	})();
 	// store settings in the controller
 	this.settings = configuration.settings;
-	this.questionnaire = []
+	this.questionnaire = [];
 	for (var i = 0; i < configuration.questionnaire.length; i++) {
 	    var q = configuration.questionnaire[i];
-	    var qObj = this._parseQuestion(q)
+	    var qObj = this._parseQuestion(q);
 	    this.questionnaire.push(qObj);
 	}
 	// store UI texts in the view
-	this.view.setUiTexts(configuration.ui_texts);
+	this.view.setUi(configuration.ui);
     }
 
     /** Takes a JSON fragment describing a question and returns a Question object. */
     _parseQuestion(q) {
-	var correctAnswer = new Answer(q.correct.text, q.correct.audio, q.correct.image)
+	var correctAnswer = new Answer(q.correct.text, q.correct.audio, q.correct.image);
 	// wrong answers do not have an explaining text
 	var wrongAnswer = new Answer("", q.wrong.audio, q.wrong.image);
 	return new Question(q.id, correctAnswer, wrongAnswer);
@@ -56,12 +56,13 @@ class QuizController {
     /**
      * Randomly selects questions and adds them to the model.
      */
-    initializeModel() {
-	var numQuestions = this.settings.num_questions
-	if (numQuestions > this.questionnaire.length) throw "Not enough questions"
-	this._shuffleArray(this.questionnaire)
+    initialize() {
+	this.model.reset();
+	var numQuestions = this.settings.num_questions;
+	if (numQuestions > this.questionnaire.length) throw "Not enough questions";
+	this._shuffleArray(this.questionnaire);
 	for (var i = 0; i < numQuestions; i++) {
-	    this.model.question.push(this.questionnaire[i])
+	    this.model.addQuestion(this.questionnaire[i]);
 	}
     }
 
@@ -76,8 +77,8 @@ class QuizController {
 	}
     }
     
-    launchQuestionnaire() {
-	throw "unimplemented";
+    launch() {
+	this.model.gotoFirstQuestion();
     }
 
     gotoNextQuestion() {

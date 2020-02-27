@@ -12,7 +12,7 @@ class QuizController extends ControllerBase {
     const allowed_tags = [
         'script', 'div', 'table', 'tr', 'td', 'th', 'i', 'link', 'p',
         'h1', 'h2', 'h3', 'a', 'img', 'details', 'summary', 'ul', 'li',
-        'input'
+        'input', 'svg', 'use'
     ];
 
     // this is called first then call constructor 

@@ -9,7 +9,7 @@ services:
         - "./mount/db:/var/lib/mysql"
 
    drupal:
-      image: hip_quiz:latest
+      image: hip_quiz_drupal:latest
       container_name: hip_quiz
       ports:
          - "9092:80"

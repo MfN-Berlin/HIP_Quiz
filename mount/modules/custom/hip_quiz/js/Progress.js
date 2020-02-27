@@ -7,11 +7,18 @@ Javacript Progress class for the Quiz
 class Progress {
     constructor() {
 	this.started = false;
-	this.qTotal = null
-	this.qAnswered = null
-	this.qCorrectRow = null
+	this.qTotal = 0;
+	this.qAnswered = 0;
+	this.qCorrectRow = 0;
     }
 
+    /** Set progress at square one*/
+    start() {
+	this.started = true;
+	this.qAnswered = 0;
+	this.qCorrectRow = 0;
+    }
+    
     /** Returns true if quiz has started, false otherwise.*/
     quizStarted() {
 	return this.started;

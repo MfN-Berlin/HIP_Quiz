@@ -3,12 +3,14 @@
   -->
 <link rel="stylesheet" type="text/css" href="/modules/custom/hip_quiz/css/quiz.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/modules/custom/hip_quiz/js/utils.js"></script>
 <script src="/modules/custom/hip_quiz/js/Observer.js"></script>
 <script src="/modules/custom/hip_quiz/js/Observable.js"></script>
 <script src="/modules/custom/hip_quiz/js/Progress.js"></script>
 <script src="/modules/custom/hip_quiz/js/Question.js"></script>
 <script src="/modules/custom/hip_quiz/js/Answer.js"></script>
 <script src="/modules/custom/hip_quiz/js/QuizModel.js"></script>
+<script src="/modules/custom/hip_quiz/js/ProgressView.js"></script>
 <script src="/modules/custom/hip_quiz/js/QuizView.js"></script>
 <script src="/modules/custom/hip_quiz/js/QuizController.js"></script>
 
@@ -18,13 +20,16 @@
       try {
 	  var model = new QuizModel();
 	  var view = new QuizView();
+	  var progressView = new ProgressView();
 	  model.addObserver(view);
+	  model.addObserver(progressView);
 	  var controller = new QuizController(model, view);
 	  controller.loadConfiguration("/modules/custom/hip_quiz/js/questionnaire.json");
 	  model.reset();
 	  button = document.getElementById("start_quiz");
 	  button.addEventListener("click", function() {
-	      console.log(controller);
+	      controller.initialize();
+	      controller.launch();
 	  });
 
       } catch(err) {
@@ -34,13 +39,17 @@
   });
 </script>
 
-
 <div class="wrapper">
-  <div id="instructions">
+  <div id="game_header" class="row">
+    <div id="header_margin_left" class="column">&nbsp;</div>    
+    <div id="header_progress" class="column"></div>    
+    <div id="header_margin_right" class="column"></div>    
   </div>
-
-  <div id="play">
+  <div class="row">
+    <div id="margin_left" class="column"></div>    
+    <div id="left" class="column"></div>
+    <div id="right" class="column"></div>
+    <div id="margin_right" class="column"></div>    
   </div>
-
-  <div id="messages"></div>
 </div>
+<div id="messages"></div>
