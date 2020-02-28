@@ -1,6 +1,7 @@
 # Hearing in pinguins project, quiz development and testing package.
 
-The project documentation is at: [Hearing in penguins](https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine)
+The project documentation is at: [Hearing in penguins](https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine/wikis/Ger%C3%A4uschequiz)
+
 
 This package provides a Drupal instance for staging the quiz. Do not use in production.
 
