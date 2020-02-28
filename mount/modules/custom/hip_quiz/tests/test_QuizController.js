@@ -26,10 +26,11 @@ QUnit.test( "Controller: controller can initialize Model", function( assert ) {
     assert.equal( controller.model.progress.qTotal, 6 );
 });
 
-QUnit.test( "Controller: controller can start", function( assert ) {
+QUnit.test( "Controller: controller can launch the quiz", function( assert ) {
     controller = setupController();
     controller.initialize();
     controller.launch();
     assert.ok( controller.model.progress.quizStarted() );
     assert.equal( controller.model.progress.qAnswered, 0 );
 });
+

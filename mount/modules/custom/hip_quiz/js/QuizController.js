@@ -47,10 +47,10 @@ class QuizController {
 
     /** Takes a JSON fragment describing a question and returns a Question object. */
     _parseQuestion(q) {
-	var correctAnswer = new Answer(q.correct.text, q.correct.audio, q.correct.image);
+	var correctAnswer = new Answer(q.correct.label, q.correct.audio, q.correct.image);
 	// wrong answers do not have an explaining text
-	var wrongAnswer = new Answer("", q.wrong.audio, q.wrong.image);
-	return new Question(q.id, correctAnswer, wrongAnswer);
+	var wrongAnswer = new Answer(q.wrong.label, q.wrong.audio, q.wrong.image);
+	return new Question(q.qid, q.text, correctAnswer, wrongAnswer);
     }
 
     /**

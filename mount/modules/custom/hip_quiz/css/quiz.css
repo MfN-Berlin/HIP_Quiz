@@ -70,12 +70,12 @@
 /*body*/
 #left {
     margin-top: 5em;
-    flex: 0 0 30%;
+    flex: 0 0 20%;
 }
 
 #right {
-    padding-left: 2em;
-    flex: 0 0 50%;
+    padding-left: 5em;
+    flex: 0 0 60%;
 }
 
 
@@ -129,10 +129,73 @@
     opacity: 100%;
 }
 
+/* question */
+h1.question {
+    margin-bottom: 0px;
+    text-align: center:
+}
+
+/* Play audio file */
+
+.playButton {
+    border: none;
+    background-color:transparent;
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.playButton:hover {
+    opacity: 100%;
+}
+
+.playButton svg {
+    width: 120px;
+}
+
+/* Image buttons  */
+.imgButton {
+    width: 170px;
+    border-radius: 3em;
+    opacity: 90%;
+    cursor: pointer;
+}
+
+.imgButton:hover {
+    opacity: 100%;
+}
+
+.answ_button {
+    font-weight: 700;
+    opacity: 50%;
+    max-width: 160px;
+    text-align: center;
+    padding: .4em 0 .4em 0;
+    border: 3px solid #999;
+    border-radius: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.answ_button:hover {
+    opacity: 100%;
+}
+
+.answ_left {
+    margin-top: 5em;
+    flex: 0 0 50%;
+}
+
+.answ_right {
+    margin-top: 5em;
+    flex: 0 0 50%;
+}
+
+/* Close button */
 .icon {
     width: 30px;
     height: 30px;
     opacity: 60%;
+    cursor: pointer;
 }
 
 .icon:hover {

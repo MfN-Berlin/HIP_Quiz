@@ -34,7 +34,7 @@ class QuizModel extends Observable {
 
     gotoFirstQuestion() {
 	this.setChanged();
-	this.progress.start();
+	this.progress.start(this.question[0]);
 	this.notifyObservers(this.progress);
 	this.clearChanged();
     }

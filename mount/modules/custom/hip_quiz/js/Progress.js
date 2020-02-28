@@ -12,11 +12,16 @@ class Progress {
 	this.qCorrectRow = 0;
     }
 
-    /** Set progress at square one*/
-    start() {
+    /** 
+	Set progress at square one
+
+	@param Question question the current question object
+    */
+    start(question) {
 	this.started = true;
 	this.qAnswered = 0;
 	this.qCorrectRow = 0;
+	this.currentQuestion = question;
     }
     
     /** Returns true if quiz has started, false otherwise.*/

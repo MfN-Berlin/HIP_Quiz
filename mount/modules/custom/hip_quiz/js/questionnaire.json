@@ -13,158 +13,184 @@
     "questionnaire" : [
 	{
 	    "qid": 1,
+	    "text": "Die tiefen Grunzlaute nutzt der Finnwal, um sich über Kilometer hinweg zu verständigen!",
 	    "correct": {
-		"text": "Die tiefen Grunzlaute nutzt der Finnwal, um sich über Kilometer hinweg zu verständigen!",
+		"label": "Finnwal",
 		"audio": "finnwal.mp3",
-		"image": "finnwal"
+		"image": "finnwal.jpg"
 	    },
 	    "wrong": {
-		"audio": "sonar",
-		"image": ""
+		"label": "Sonar",
+		"audio": "sonar.mp3",
+		"image": "sonar.jpg"
 	    }
 	},
 	{
 	    "qid": 2,
+	    "text": "Durch das deutliche Grunzen lassen sich Bartenwale auch einfach mit Schweinen verwechseln!",
 	    "correct": {
-		"text": "Durch das deutliche Grunzen lassen sich Bartenwale auch einfach mit Schweinen verwechseln!",
-		"audio": "buckelwal",
-		"image": ""
+		"label": "Buckelwal",
+		"audio": "buckelwal.mp3",
+		"image": "buckelwal.jpg"
 	    },
 	    "wrong": {
-		"audio": "wollschwein",
-		"image": ""
+		"label": "Wollschwein",
+		"audio": "",
+		"image": "wollschwein.jpg"
 	    }
 	},
 	{
 	    "qid": 3,
+	    "text": "Auch Unterwasser hört man den Knall eines Blitzes. Und da sich Schallwellen im Wasser wesentlich schneller ausbreiten als an Land sogar in einem noch größeren Umfeld.",
 	    "correct": {
-		"text": "Auch Unterwasser hört man den Knall eines Blitzes. Und da sich Schallwellen im Wasser wesentlich schneller ausbreiten als an Land sogar in einem noch größeren Umfeld.",
-		"audio": "blitz",
-		"image": ""
+		"label": "Blitz",
+		"audio": "blitz.mp3",
+		"image": "blitz.jpg"
 	    },
 	    "wrong": {
-		"audio": "airgun",
-		"image": ""
+		"label": "Airgun",
+		"audio": "airgun.mp3",
+		"image": "airgun.jpg"
 	    }
 	},
 	{
 	    "qid": 4,
+	    "text": "Der Schweinswal nutzt Echoortung um sich Unterwasser zu orientieren. Dafür verarbeitet sein Hirn die Echos von sehr hohen Klicklauten, welche er selbst aussendet, zu einem Bild. Er sieht mit seinem Gehör!",
 	    "correct": {
-		"text": "Der Schweinswal nutzt Echoortung um sich Unterwasser zu orientieren. Dafür verarbeitet sein Hirn die Echos von sehr hohen Klicklauten, welche er selbst aussendet, zu einem Bild. Er sieht mit seinem Gehör!",
-		"audio": "schweinswal",
-		"image": ""
+		"label": "Schweinswal",
+		"audio": "schweinswal.mp3",
+		"image": "schweinswal.jpg"
 	    },
 	    "wrong": {
-		"audio": "fliege",
-		"image": ""
+		"label": "Fliege",
+		"audio": "fliege.mp3",
+		"image": "fliege.jpg"
 	    }
 	},
 	{
 	    "qid": 5,
+	    "text": "Schwertwale nutzen zur Kommunikation auch sogenannte Zwitscher-Laute. Diese sind dem Vogelgezwitscher sehr ähnlich.",
 	    "correct": {
-		"text": "Schwertwale nutzen zur Kommunikation auch sogenannte Zwitscher-Laute. Diese sind dem Vogelgezwitscher sehr ähnlich.",
-		"audio": "schwertwal",
-		"image": ""
+		"label": "Orcas",
+		"audio": "orcas.mp3",
+		"image": "orcas.jpg"
 	    },
 	    "wrong": {
-		"audio": "papageien",
-		"image": ""
+		"label": "Papageien",
+		"audio": "papageien.mp3",
+		"image": "papageien.jpg"
 	    }
 	},
 	{
 	    "qid": 6,
+	    "text": "Dieses Geräusch stammt von einer gerade auftauchenden Hawaii-Mönchsrobbe. Es wird häufiger beobachtet, dass sie solche Laute ausstoßen. Nur warum sie das tun, ist noch unklar.",
 	    "correct": {
-		"text": "Dieses Geräusch stammt von einer gerade auftauchenden Hawaii-Mönchsrobbe. Es wird häufiger beobachtet, dass sie solche Laute ausstoßen. Nur warum sie das tun, ist noch unklar.",
-		"audio": "mönchsrobbe",
-		"image": ""
+		"label": "Mönchsrobbe",
+		"audio": "moenchsrobbe.mp3",
+		"image": "moenchsrobbe.jpg"
 	    },
 	    "wrong": {
-		"audio": "rov",
-		"image": ""
+		"label": "ROV",
+		"audio": "",
+		"image": "rov.jpg"
 	    }
 	},
 	{
 	    "qid": 7,
+	    "text": "Die Laute des Motors und der durch das Wasser wirbelnden Schiffschraube produzieren einen riesigen Lärm, der durch die gute Schallwellenübertragungsfähigkeit des Wassers noch weithin hörbar ist.",
 	    "correct": {
-		"text": "Die Laute des Motors und der durch das Wasser wirbelnden Schiffschraube produzieren einen riesigen Lärm, der durch die gute Schallwellenübertragungsfähigkeit des Wassers noch weithin hörbar ist.",
-		"audio": "schlauchboot",
-		"image": ""
+		"label": "Boot",
+		"audio": "boot.mp3",
+		"image": "boot.jpg"
 	    },
 	    "wrong": {
-		"audio": "pilotwale",
-		"image": ""
+		"label": "Grindwale",
+		"audio": "grindwale.mp3",
+		"image": "grindwale.jpg"
 	    }
 	},
 	{
 	    "qid": 8,
+	    "text": "Wenn Pistolenkrebse jagen, betäuben sie ihre Beute mit einem lauten Knall ihrer großen Schere - wenn sich auf einem Gebiet viele Pistolenkrebse befinden, kann das schon mal ein riesen Lärm werden!",
 	    "correct": {
-		"text": "Wenn Pistolenkrebse jagen, betäuben sie ihre Beute mit einem lauten Knall ihrer großen Schere - wenn sich auf einem Gebiet viele Pistolenkrebse befinden, kann das schon mal ein riesen Lärm werden!",
-		"audio": "pistolenkrebse",
-		"image": ""
+		"label": "Pistolenkrebs",
+		"audio": "pistolenkrebs.mp3",
+		"image": "pistolenkrebs.jpg"
 	    },
 	    "wrong": {
-		"audio": "regen",
-		"image": ""
+		"label": "Regen",
+		"audio": "regen.mp3",
+		"image": "regen.jpg"
 	    }
 	},
 	{
 	    "qid": 9,
+	    "text": "Zwitschern ist neben dem Klicken (siehe Schweinswal) und dem Grunzen (siehe Finn- und Buckelwal) eine weitere Art, wie sich Wale verständigen können. Selbst ein riesiges Tier wie der Pottwal kann solche feinen Laute ausstoßen. *Pottwal, Drossel, Fing und Star...*",
 	    "correct": {
-		"text": "Zwitschern ist neben dem Klicken (siehe Schweinswal) und dem Grunzen (siehe Finn- und Buckelwal) eine weitere Art, wie sich Wale verständigen können. Selbst ein riesiges Tier wie der Pottwal kann solche feinen Laute ausstoßen. *Pottwal, Drossel, Fing und Star...*",
-		"audio": "pottwal",
-		"image": ""
+		"label": "Pottwal",
+		"audio": "pottwal.mp3",
+		"image": "pottwal.jpg"
 	    },
 	    "wrong": {
-		"audio": "amsel",
-		"image": ""
+		"label": "Amsel",
+		"audio": "amsel.mp3",
+		"image": "amsel.jpg"
 	    }
 	},
 	{
 	    "qid": 10,
+	    "text": "Ein weiterer Krebs kann mit seinen Geräuschen beeindrucken. Das Knarzen des Hummers wird durch eine Art eingebaute Raspel erzeugt, über die er streicht.",
 	    "correct": {
-		"text": "Ein weiterer Krebs kann mit seinen Geräuschen beeindrucken. Das Knarzen des Hummers wird durch eine Art eingebaute Raspel erzeugt, über die er streicht.",
-		"audio": "hummer",
-		"image": ""
+		"label": "Hummer",
+		"audio": "hummer.mp3",
+		"image": "hummer.jpg"
 	    },
 	    "wrong": {
-		"audio": "ente",
-		"image": ""
+		"label": "Ente",
+		"audio": "ente.mp3",
+		"image": "ente.jpg"
 	    }
 	},
 	{
 	    "qid": 11,
+	    "text": "Um das tiefe Brummen zweier aneinander reibender Eisgiganten hörbar zu machen, musste es mit 20facher Geschwindigkeit abgespielt werden.",
 	    "correct": {
-		"text": "Um das tiefe Brummen zweier aneinander reibender Eisgiganten hörbar zu machen, musste es mit 20facher Geschwindigkeit abgespielt werden.",
-		"audio": "eisbergkollision",
-		"image": ""
+		"label": "Eisbergkollision",
+		"audio": "eisbergkollision.mp3",
+		"image": "eisbergkollision.jpg"
 	    },
 	    "wrong": {
-		"audio": "seebeben",
-		"image": ""
+		"label": "Seebeben",
+		"audio": "seebeben.mp3",
+		"image": "seebeben.jpg"
 	    }
 	},
 	{
 	    "qid": 12,
+	    "text": "Eine spezielle Unterart der Zwergwale macht diese sogenannten Star-Wars-Laute. Wieder wird deutlich, welch riesige Bandbreite an Lauten von Lebewesen unter Wasser produziert wird.",
 	    "correct": {
-		"text": "Eine spezielle Unterart der Zwergwale macht diese sogenannten Star-Wars-Laute. Wieder wird deutlich, welch riesige Bandbreite an Lauten von Lebewesen unter Wasser produziert wird.",
-		"audio": "zwergwal",
-		"image": ""
+		"label": "Zwergwal",
+		"audio": "zwergwal.mp3",
+		"image": "zwergwal.jpg"
 	    },
 	    "wrong": {
-		"audio": "starwars",
-		"image": ""
+		"label": "Starwars",
+		"audio": "starwars.mp3",
+		"image": "starwars.jpg"
 	    }
 	},
 	{
 	    "qid": 13,
+	    "text": "Das waren Paarungslaute eines Walrossmännchens - das ein Spieler die schon mal gehört hat, kommt selten vor. Im Gegenbeispiel wird im Verlauf ein Blasenschleier aktiviert um den Lärmpegel des Baustelle zu senken.",
 	    "correct": {
-		"text": "Das waren Paarungslaute eines Walrossmännchens - das ein Spieler die schon mal gehört hat, kommt selten vor. Im Gegenbeispiel wird im Verlauf ein Blasenschleier aktiviert um den Lärmpegel des Baustelle zu senken.",
-		"audio": "walross",
-		"image": ""
+		"label": "Walross",
+		"audio": "walross.mp3",
+		"image": "walross.jpg"
 	    },
 	    "wrong": {
-		"audio": "pfahlgründung",
-		"image": ""
+		"label": "Pfahlgruendung",
+		"audio": "pfahlgruendung.mp3",
+		"image": "pfahlgruendung.jpg"
 	    }
 	}
     ]

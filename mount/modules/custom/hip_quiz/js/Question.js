@@ -5,8 +5,9 @@ Javacript Question class for the Quiz
 */
 
 class Question {
-    constructor(id, correctAnswer, wrongAnswer, chosenAnswer) {
+    constructor(id, text, correctAnswer, wrongAnswer) {
 	this.id = id;
+	this.text = text;
 	this.correctAnswer = correctAnswer;
 	this.wrongAnswer = wrongAnswer;
     }
