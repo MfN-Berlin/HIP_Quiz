@@ -5,7 +5,7 @@ The project documentation is at: [Hearing in penguins](https://code.naturkundemu
 This package provides a Drupal instance for staging the quiz. Do not use in production.
 
 Provides a Drupal installation based on these images:
-* Drupal 8.7 (PHP 7.2, Apache) with drupal/entity_embed and drupal/taxonomy_import
+* Drupal 8.7 (PHP 7.2, Apache) with node and qunit for testing the javascript in the module
 * offical MariaDb 10.4
 
 Requires: Docker, Docker-compose
@@ -30,3 +30,10 @@ Once a site is installed, you can start Drupal by calling
 ```
 docker-compose up -d
 ```
+
+# Quiz module
+The quiz module is in mount/modules/custom/hip_quiz
+
+The module can be tested by opening http://localhost:9092/modules/custom/hip_quiz/tests/test_suite.html
+
+The module pages can be accessed at http://localhost:9092/quiz/
