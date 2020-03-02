@@ -10,6 +10,7 @@ class Progress {
 	this.qTotal = 0;
 	this.qAnswered = 0;
 	this.qCorrectRow = 0;
+	this.state = null
     }
 
     /** 

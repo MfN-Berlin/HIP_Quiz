@@ -85,8 +85,15 @@ class QuizController {
 	throw "unimplemented";
     }
 
-    recordAnswer() {
-	throw "unimplemented";
+    /**
+     *  Receive the choice the user made by clicking on a button
+     *
+     *  @param answerStr String the label of the answer
+     */
+    recordAnswer(answerStr) {
+	var correctAnswer = this.model.getCorrectAnswer();
+	var isCorrect = (answerStr == correctAnswer.label);
+	this.model.updateAnswer(isCorrect);
     }
 
     compileReport() {

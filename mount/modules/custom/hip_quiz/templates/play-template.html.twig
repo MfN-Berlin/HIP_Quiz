@@ -10,11 +10,21 @@
 <script src="/modules/custom/hip_quiz/js/Question.js"></script>
 <script src="/modules/custom/hip_quiz/js/Answer.js"></script>
 <script src="/modules/custom/hip_quiz/js/QuizModel.js"></script>
+
+<script src="/modules/custom/hip_quiz/js/wavesurfer.js"></script>
+<script src="/modules/custom/hip_quiz/js/wavesurfer.regions.js"></script>
+<script src="/modules/custom/hip_quiz/js/hip.wavesurfer.spectrogram.js"></script>
+<script src="/modules/custom/hip_quiz/js/player_actions.js"></script>
+<!--script src="/modules/custom/hip_quiz/js/event_listeners.js"></script-->
 <script src="/modules/custom/hip_quiz/js/ProgressView.js"></script>
 <script src="/modules/custom/hip_quiz/js/QuizView.js"></script>
+
 <script src="/modules/custom/hip_quiz/js/QuizController.js"></script>
 
+
 <script language="javascript">
+  var controller; // controller should accessible for the page buttons
+  
   // Start the game when button is pressed
   document.addEventListener('DOMContentLoaded', function() {
       try {
@@ -23,7 +33,7 @@
 	  var progressView = new ProgressView();
 	  model.addObserver(view);
 	  model.addObserver(progressView);
-	  var controller = new QuizController(model, view);
+	  controller = new QuizController(model, view);
 	  controller.loadConfiguration("/modules/custom/hip_quiz/js/questionnaire.json");
 	  model.reset();
 	  button = document.getElementById("start_quiz");

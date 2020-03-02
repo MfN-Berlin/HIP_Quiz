@@ -38,13 +38,30 @@ class QuizModel extends Observable {
 	this.notifyObservers(this.progress);
 	this.clearChanged();
     }
+
+    /**
+     * Returns the correct answer to the current question
+     *
+     * @retun Answer answer object
+     */
+    getCorrectAnswer() {
+	return this.progress.currentQuestion.correctAnswer
+    }
     
     gotoNextQuestion() {
 	throw "unimplemented";
     }
 
-    updateAnswer() {
-	throw "unimplemented";
+    /**
+     * Is called when a question has been answered 
+     *
+     * state boolean whether the answer was right or wrong
+     */
+    updateAnswer(state) {
+	this.progress.state = state;
+	this.setChanged();
+	this.notifyObservers(this.progress);
+	this.clearChanged();	
     }
 
     quizFinished() {
