@@ -69,13 +69,14 @@
 
 /*body*/
 #left {
+    text-align: center;
     margin-top: 2em;
-    flex: 0 0 20%;
+    flex: 0 0 25%;
 }
 
 #right {
     padding-left: 5em;
-    flex: 0 0 60%;
+    flex: 0 0 55%;
 }
 
 
@@ -95,6 +96,10 @@
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
+}
+
+.feedback {
+    margin-top: 3em;
 }
 
 /* Clear floats after the columns */
@@ -152,7 +157,11 @@ h1.question {
     width: 120px;
 }
 
-/* Image buttons  */
+.buttonIcon {
+    fill: #7da30b;
+}
+
+/* Question image buttons  */
 .imgButton {
     width: 170px;
     max-height: 160px;
@@ -192,6 +201,44 @@ h1.question {
     flex: 0 0 50%;
 }
 
+/* feedback screen  */
+.miniplayButton {
+    background-color: transparent;
+    border: none;
+}
+
+.miniplayButton svg {
+    width: 60px;
+    height: 60px;
+
+    margin-top: 40px;
+    opacity: 60%;
+}
+
+.miniplayButton svg:hover {
+    opacity: 100%;
+}
+
+.minibuttonIcon {
+    fill: #7da30b;
+}
+
+.miniplayer-wrapper #controls {
+    position: absolute;
+    z-index: 2;
+    margin-left: 45px;
+    margin-top: 10px;
+}
+
+.miniplayer-wrapper wave {
+    display: none;
+}
+
+.miniButton {
+    opacity: 100%;
+    cursor: default;
+}
+
 /* Close button */
 .icon {
     width: 30px;
@@ -206,7 +253,6 @@ h1.question {
 
 /* Player  */
 #controls {
-    margin-left: 25px
 }
 
 #spectrogram_1 wave {

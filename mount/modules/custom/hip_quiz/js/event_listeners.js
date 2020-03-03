@@ -1,12 +1,14 @@
 // Create an instance of wavesurfer
+/*
 var wavesurfer_1;
 var audiofile_1 = "/modules/custom/hip_quiz/media/grindwale.mp3";
 var SpectrogramPlugin_1 = window.WaveSurfer.spectrogram;
-
+*/
 // Init & load audio file
 // document.addEventListener('DOMContentLoaded', function() {
 
 // create spectrogram
+/*
 function initPlayer() {
     wavesurfer_1 = WaveSurfer.create({
 	container: document.querySelector('#spectrogram_1'),
@@ -17,9 +19,9 @@ function initPlayer() {
 	plugins:[
 	]
     });
-
+*/
     // Load audio from URL
-    wavesurfer_1.load(audiofile_1);
+//    wavesurfer_1.load(audiofile_1);
     
     // show/hide play button over spectrogram
     /*
@@ -36,7 +38,8 @@ function initPlayer() {
 	.querySelector('[data-action="play_1"]')
 	.addEventListener('mouseout', dimControls);
     */
-    
+
+/*
     // play audio
     document
 	.querySelector('[data-action="play_1"]')
@@ -53,3 +56,4 @@ function initPlayer() {
     }, 1000);
 }
 //});
+*/
