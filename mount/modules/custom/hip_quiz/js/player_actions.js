@@ -1,6 +1,5 @@
 // player actions
 toggle = function() {
-    console.log("toggle " + this.id)
     var button_el = document.querySelector('[data-action="play_' + this.id + '"]');
     if (button_el.innerHTML.includes('sprites.svg#Icon--play')) {
 	// setPauseSprite(this.id);
@@ -32,6 +31,12 @@ toggleMiniplayer = function() {
 }
 
 pauseMiniSprite = function() {}
+
+stopOtherPlayers = function() {
+    if (wavesurfer_1 && this.id != "play_1") { wavesurfer_1.pause(); }
+    if (wavesurferMini_left && this.id != "miniplay_left") {wavesurferMini_left.pause();}
+    if (wavesurferMini_right && this.id != "miniplay_right") {wavesurferMini_right.pause();}
+}
 
 /*
 setPauseSprite = function(id) {

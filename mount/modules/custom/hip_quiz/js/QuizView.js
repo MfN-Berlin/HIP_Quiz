@@ -27,12 +27,12 @@ class QuizView extends Observer {
 	    this.clear();
 	    this.showQuizInstructions();
 	    
-	    // quiz has started, show question
+	// quiz has started, show question
 	} else if (progress.quizStarted() && progress.state == null) {
 	    this.clear();
 	    this.showCurrentQuestion(progress);
 	    
-	    // question was answered, show feedback
+	// question was answered, show feedback
 	} else if (progress.quizStarted() && progress.state != null) {
 	    this.clear();
 	    this.showQuestionFeedback(progress);
@@ -42,7 +42,7 @@ class QuizView extends Observer {
     /** Show the start page of the quiz */
     showQuizInstructions() {
 	document.getElementById("left").innerHTML = `<img src="${this.ui.logo}" />`;
-	document.getElementById("right").innerHTML = `<h1>${this.ui.titel}</h1>\n${this.ui.start}`;
+	document.getElementById("right").innerHTML = `<h1>${this.ui.title}</h1>\n${this.ui.start}`;
     }
     
     /** Show a question and 2 choices */
@@ -174,6 +174,10 @@ class QuizView extends Observer {
 	// Load audio from URL
 	var audioPath = MEDIA_PATH + "/" + choice.audio;
 	ws.load(audioPath);
+	// stop other players
+	document
+	    .querySelector(`[data-action="miniplay_${elName}"]`)
+	    .addEventListener('click', stopOtherPlayers);
 	// play audio
 	document
 	    .querySelector(`[data-action="miniplay_${elName}"]`)
