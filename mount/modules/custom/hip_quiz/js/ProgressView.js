@@ -20,33 +20,62 @@ class ProgressView extends Observer {
     /** Draw the progress bar and other header elements*/
     show(progress) {	
 	// close button
-	var icon = '<div id="close"><svg class="icon" role="img"><use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--close"></use></svg></div>';
+	var icon = this._drawCloseButton();
 	document.getElementById("header_margin_left").innerHTML = icon;
 
 	// how many in a row
-	var in_a_row
-	if (progress.qCorrectRow > 0) {
-	    in_a_row = '<div id="in_a_row">{0}x in Folge</div>'.format(progress.qCorrectRow);
-	} else {
-	    in_a_row = '<div id="in_a_row"></div>';
-	}
+	var in_a_row = this._drawIn_a_row(progress);
 	
 	// progress bar
-	var progressbar = '<div id="header_progress_fill"><div id="header_progress_current"></div></div>';
+	var progressbar = this._drawProgressBar(progress);
 	document.getElementById("header_progress").innerHTML = in_a_row + progressbar;
-	var progressPercentage = progress.qAnswered / progress.qTotal;
-	document.getElementById("header_progress_current").style.width = "{0}%".format(progressPercentage);
-	document.getElementById("header_margin_right").innerHTML = "";
-
+	
 	// score
-	var progressMsg = '<div id="header_progress_msg">{0}/{1}</div>'.format(progress.qAnswered, progress.qTotal);
+	var progressMsg = this._drawCurrentScore(progress);
 	document.getElementById("header_margin_right").innerHTML = progressMsg;
     }
     
-    /**Clear all elements from this view*/
+    /** Clear all elements from this view */
     clear() {
 	document.getElementById("header_margin_left").innerHTML = "";
 	document.getElementById("header_progress").innerHTML = "";
 	document.getElementById("header_margin_right").innerHTML = "";
+    }
+
+    /****************************************************/
+    /**               Private methods                   */
+    /****************************************************/
+
+    _drawProgressBar(progress) {
+	var progressPercentage = 100 * progress.qAnswered / progress.qTotal;
+	var correctClass = progress.currentAnswerCorrect()? "correct":"wrong";
+	return `
+          <div id="header_progress_fill" class="${correctClass}">
+            <div id="header_progress_current" style="width:${progressPercentage}%"></div>
+          </div>`;
+    }
+    
+    _drawIn_a_row(progress) {
+	var in_a_row;
+	if (progress.qCorrectRow > 0) {
+	    in_a_row = `<div id="in_a_row">${progress.qCorrectRow}x in Folge</div>`;
+	} else {
+	    in_a_row = '<div id="in_a_row"></div>';
+	}
+	return in_a_row;
+    }
+
+    _drawCurrentScore(progress) {
+	return `
+          <div id="header_progress_msg">${progress.qAnswered}/${progress.qTotal}</div>`;
+    }
+    
+    _drawCloseButton() {
+	return `
+          <div id="close">
+            <svg class="icon" role="img">
+              <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--close"></use>
+            </svg>
+          </div>`;
     }
 }

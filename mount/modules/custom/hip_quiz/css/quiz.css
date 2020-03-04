@@ -48,8 +48,15 @@
 
 #header_progress_current {
     height: 20px;
-    background-color: green;
     width: 0;
+}
+
+.correct #header_progress_current {
+    background-color: #7da30b;
+}
+
+.wrong #header_progress_current {
+    background-color: #ff7272;
 }
 
 #margin_right, #header_margin_right {

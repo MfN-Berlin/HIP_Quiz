@@ -60,6 +60,12 @@ class QuizModel extends Observable {
      */
     updateAnswer(isCorrect) {
 	this.progress.state = isCorrect;
+	this.progress.qAnswered += 1;
+	if (isCorrect) {
+	    this.progress.qCorrectRow += 1;
+	} else {
+	    this.progress.qCorrectRow = 0;
+	}
 	this.setChanged();
 	this.notifyObservers(this.progress);
 	this.clearChanged();	
