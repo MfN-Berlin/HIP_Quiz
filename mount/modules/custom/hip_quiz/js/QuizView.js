@@ -75,10 +75,17 @@ class QuizView extends Observer {
 
 	// read the choices for the current question
 	var choices = progress.getChoices();
-	
+
+	// whether left (0) or right (1) was clicked
+	var leftClass="not_chosen", rightClass="not_chosen";
+	if (progress.getCurrentChoice() == 0) {
+	    leftClass = "chosen";
+	} else {
+	    rightClass = "chosen";
+	}
 	// reveal the choices for the current question, with audio player if applicable
-	var leftChoiceEl = this._revealChoice('left', choices[0]);
-	var rightChoiceEl = this._revealChoice('right', choices[1]);
+	var leftChoiceEl = this._revealChoice('left', choices[0], leftClass);
+	var rightChoiceEl = this._revealChoice('right', choices[1], rightClass);
 	var answerEl = `
         <div class="row">
           <div class="answ_left">${leftChoiceEl}</div>
@@ -97,6 +104,7 @@ class QuizView extends Observer {
     clear() {
 	document.getElementById("left").innerHTML = "";
 	document.getElementById("right").innerHTML = "";
+	stopOtherPlayers();
     }
 
     /****************************************************/
@@ -214,7 +222,7 @@ class QuizView extends Observer {
     }
     
     /** Draw image, label and player (if applicable) for the answer frame */
-    _revealChoice(elName, choice) {
+    _revealChoice(elName, choice, chosenClass) {
 	var responseEl = `
         <div class="miniplayer-wrapper" id="miniplayer_${elName}">
           <div id="minispectrogram_${elName}" class="specVisibleWindowDiv">
@@ -228,7 +236,7 @@ class QuizView extends Observer {
           </div>
         </div>
         <img src="${MEDIA_PATH}/${choice.image}" class="imgButton miniButton"/>
-        <div class="answ_button miniButton">${choice.label}</div>`;
+        <div class="answ_button miniButton ${chosenClass}">${choice.label}</div>`;
 	return responseEl;
     }
 

@@ -55,10 +55,11 @@ class QuizModel extends Observable {
     /**
      * Is called when a question has been answered 
      *
-     * state boolean whether the answer was right or wrong
+     * @param isCorrect boolean whether the answer was right or wrong
+     * @param answerStr String the label of the answer
      */
-    updateAnswer(state) {
-	this.progress.state = state;
+    updateAnswer(isCorrect) {
+	this.progress.state = isCorrect;
 	this.setChanged();
 	this.notifyObservers(this.progress);
 	this.clearChanged();	
@@ -67,5 +68,6 @@ class QuizModel extends Observable {
     quizFinished() {
 	throw "unimplemented";
     }
+
 }
 

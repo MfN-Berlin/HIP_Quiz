@@ -45,14 +45,6 @@ class QuizController {
 	this.view.setUi(configuration.ui);
     }
 
-    /** Takes a JSON fragment describing a question and returns a Question object. */
-    _parseQuestion(q) {
-	var correctAnswer = new Answer(q.correct.label, q.correct.audio, q.correct.image);
-	// wrong answers do not have an explaining text
-	var wrongAnswer = new Answer(q.wrong.label, q.wrong.audio, q.wrong.image);
-	return new Question(q.qid, q.text, correctAnswer, wrongAnswer);
-    }
-
     /**
      * Randomly selects questions and adds them to the model.
      */
@@ -66,17 +58,6 @@ class QuizController {
 	}
     }
 
-    /** 
-     * Shuffle an array, Durstenfeld algorithm, using multiple assignment
-     * Laurens Holst (2018) https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-     */
-    _shuffleArray(array) {
-	for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-	}
-    }
-    
     launch() {
 	this.model.gotoFirstQuestion();
     }
@@ -111,5 +92,29 @@ class QuizController {
     quit() {
 	throw "unimplemented";
     }
+    
+    /****************************************************/
+    /**               Private methods                   */
+    /****************************************************/
+
+    /** Takes a JSON fragment describing a question and returns a Question object. */
+    _parseQuestion(q) {
+	var correctAnswer = new Answer(q.correct.label, q.correct.audio, q.correct.image);
+	// wrong answers do not have an explaining text
+	var wrongAnswer = new Answer(q.wrong.label, q.wrong.audio, q.wrong.image);
+	return new Question(q.qid, q.text, correctAnswer, wrongAnswer);
+    }
+
+    /** 
+     * Shuffle an array, Durstenfeld algorithm, using multiple assignment
+     * Laurens Holst (2018) https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+     */
+    _shuffleArray(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+	}
+    }
+    
 }
 
