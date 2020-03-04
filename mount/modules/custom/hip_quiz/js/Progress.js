@@ -60,6 +60,10 @@ class Progress {
 	}
 	return chosen;
     }
+
+    currentAnswerCorrect() {
+	return this.state;
+    }
     
     /** 
      * Shuffles the order of the answers,

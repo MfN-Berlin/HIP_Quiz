@@ -21,7 +21,6 @@ hideControls = function() {
 }
 
 toggleMiniplayer = function() {
-    console.log("toggle " + this.id)
     var button_el = document.querySelector('[data-action="' + this.id + '"]');
     if (button_el.innerHTML.includes('sprites.svg#Icon--play')) {
 	// pauseMiniSprite(this.id);

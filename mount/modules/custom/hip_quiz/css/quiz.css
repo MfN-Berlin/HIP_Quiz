@@ -6,7 +6,6 @@
     font-family: Roboto, sans-serif;
     font-size: 12pt;
     padding-top: .5em;
-    padding-bottom: 3em;
 }
 
 .wrapper h1 {
@@ -71,14 +70,15 @@
 #left {
     text-align: center;
     margin-top: 2em;
-    flex: 0 0 25%;
+    flex: 0 0 30%;
+    overflow: hidden;
 }
 
 #right {
     padding-left: 5em;
-    flex: 0 0 55%;
+    flex: 0 0 50%;
+    overflow: hidden;
 }
-
 
 .wrapper p {
     text-align: left;
@@ -103,7 +103,7 @@
 }
 
 .not_chosen {
-    opacity: 30%!important;
+    opacity: 40%!important;
 }
 
 /* Clear floats after the columns */
@@ -130,6 +130,15 @@
     font-weight: 600;
     border-radius: .8em;
     opacity: 80%;
+}
+
+.wrong .button {
+    border-color:#ff7272;
+    background-color:#ff7272;
+}
+
+.wrong .button:hover {
+    background-color:red;
 }
 
 .button:hover {
@@ -243,6 +252,45 @@ h1.question {
     cursor: default;
 }
 
+/* Feedback footer */
+.footer {
+    margin-top: 2em;
+}
+
+#footer_left {
+    text-align: left;
+    flex: 0 0 30%;
+    overflow: hidden;
+}
+
+#footer_left {
+    font-size: 12pt;
+}
+
+#footer_left h2 {
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+#footer_right {
+    flex: 0 0 50%;
+    overflow: hidden;
+    padding-top: 2em;
+}
+
+.correct {
+    background-color: #d9e5b2;
+    color: #7da30b;
+}
+.wrong {
+    background-color: #ffbbbb;
+    color: red;
+}
+.icon_feedback {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
 /* Close button */
 .icon {
     width: 30px;
@@ -271,6 +319,5 @@ h1.question {
 
 @media (min-width: 375px) {
     .wrapper {
-	padding: .5em;
     }
 }

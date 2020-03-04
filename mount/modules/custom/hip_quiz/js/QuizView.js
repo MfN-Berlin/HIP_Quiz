@@ -27,12 +27,12 @@ class QuizView extends Observer {
 	    this.clear();
 	    this.showQuizInstructions();
 	    
-	// quiz has started, show question
+	    // quiz has started, show question
 	} else if (progress.quizStarted() && progress.state == null) {
 	    this.clear();
 	    this.showCurrentQuestion(progress);
 	    
-	// question was answered, show feedback
+	    // question was answered, show feedback
 	} else if (progress.quizStarted() && progress.state != null) {
 	    this.clear();
 	    this.showQuestionFeedback(progress);
@@ -42,7 +42,7 @@ class QuizView extends Observer {
     /** Show the start page of the quiz */
     showQuizInstructions() {
 	document.getElementById("left").innerHTML = `<img src="${this.ui.logo}" />`;
-	document.getElementById("right").innerHTML = `<h1>${this.ui.title}</h1>\n${this.ui.start}`;
+	document.getElementById("right").innerHTML = `<h1>${this.ui.title}</h1>\n${this.ui.start}` + this._drawButton('start_quiz', "Spiel starten");
     }
     
     /** Show a question and 2 choices */
@@ -58,12 +58,9 @@ class QuizView extends Observer {
 	// draw the choices for the current question
 	var leftChoiceEl = this._drawChoice(choices[0]);
 	var rightChoiceEl = this._drawChoice(choices[1]);
-	var answerEl = `
-        <div class="row">
-          <div class="answ_left">${leftChoiceEl}</div>
-          <div class="answ_right">${rightChoiceEl}</div>
-        </div>`;
+	var answerEl = this._drawChoices(leftChoiceEl, rightChoiceEl);
 	document.getElementById("right").innerHTML = answerEl;
+
 	// add control events and draw the wave (must be at the end of this method)
 	this._initPlayer(progress.currentQuestion.correctAnswer);
     }
@@ -83,15 +80,17 @@ class QuizView extends Observer {
 	} else {
 	    rightClass = "chosen";
 	}
+
 	// reveal the choices for the current question, with audio player if applicable
 	var leftChoiceEl = this._revealChoice('left', choices[0], leftClass);
 	var rightChoiceEl = this._revealChoice('right', choices[1], rightClass);
-	var answerEl = `
-        <div class="row">
-          <div class="answ_left">${leftChoiceEl}</div>
-          <div class="answ_right">${rightChoiceEl}</div>
-        </div>`;
+	var answerEl = this._drawChoices(leftChoiceEl, rightChoiceEl);
 	document.getElementById("right").innerHTML = answerEl;
+
+	// draw feedback footer
+	var footerEl = this._drawFooter(progress);
+	document.getElementById("footer").innerHTML = footerEl;
+
 	// add control events and draw the waves (must be at the end of this method)
 	this._initFeedbackPlayers(choices);
     }
@@ -104,6 +103,7 @@ class QuizView extends Observer {
     clear() {
 	document.getElementById("left").innerHTML = "";
 	document.getElementById("right").innerHTML = "";
+	document.getElementById("footer").innerHTML = "";
 	stopOtherPlayers();
     }
 
@@ -157,45 +157,67 @@ class QuizView extends Observer {
 	wavesurferMini_right = this._initWavesurfer('right', choices[1]);
 	
 	// check each second if player hasn't reached the end of file
-	window.setInterval(function() {
-	    if (wavesurferMini_left.backend.getPlayedPercents() == 1) {
-		pauseMiniSprite();
-	    }
-	}, 1000);
-	window.setInterval(function() {
-	    if (wavesurferMini_right.backend.getPlayedPercents() == 1) {
-		pauseMiniSprite();
-	    }
-	}, 1000);
+	if (wavesurferMini_left) {
+	    window.setInterval(function() {
+		if (wavesurferMini_left.backend.getPlayedPercents() == 1) {
+		    pauseMiniSprite();
+		}
+	    }, 1000);
+	}
+	if (wavesurferMini_right) {
+	    window.setInterval(function() {
+		if (wavesurferMini_right.backend.getPlayedPercents() == 1) {
+		    pauseMiniSprite();
+		}
+	    }, 1000);
+	}
     }
     
     _initWavesurfer(elName, choice) {
-	var ws = WaveSurfer.create({
-	    container: document.querySelector(`#minispectrogram_${elName}`),
-	    waveColor: '#1D90C0',
-	    progressColor: '#C1E7BA',
-	    loaderColor: 'purple',
-	    cursorColor: 'navy',
-	    plugins:[]
-	});
-	
-	// Load audio from URL
-	var audioPath = MEDIA_PATH + "/" + choice.audio;
-	ws.load(audioPath);
-	// stop other players
-	document
-	    .querySelector(`[data-action="miniplay_${elName}"]`)
-	    .addEventListener('click', stopOtherPlayers);
-	// play audio
-	document
-	    .querySelector(`[data-action="miniplay_${elName}"]`)
-	    .addEventListener('click', ws.playPause.bind(ws));
-	// toggle play / pause
-	document
-	    .querySelector(`[data-action="miniplay_${elName}"]`)
-	    .addEventListener('click', toggleMiniplayer);
-		
-	return ws;
+	// the element where the spectrogram will be placed
+	var specEl = document.querySelector(`#minispectrogram_${elName}`)
+	// not all answers have a sound
+	if (specEl) {
+	    var ws = WaveSurfer.create({
+		container: specEl,
+		waveColor: '#1D90C0',
+		progressColor: '#C1E7BA',
+		loaderColor: 'purple',
+		cursorColor: 'navy',
+		plugins:[]
+	    });
+	    
+	    // Load audio from URL
+	    var audioPath = MEDIA_PATH + "/" + choice.audio;
+	    ws.load(audioPath);
+	    // stop other players
+	    document
+		.querySelector(`[data-action="miniplay_${elName}"]`)
+		.addEventListener('click', stopOtherPlayers);
+	    // play audio
+	    document
+		.querySelector(`[data-action="miniplay_${elName}"]`)
+		.addEventListener('click', ws.playPause.bind(ws));
+	    // toggle play / pause
+	    document
+		.querySelector(`[data-action="miniplay_${elName}"]`)
+		.addEventListener('click', toggleMiniplayer);
+	    
+	    return ws;
+	}
+    }
+
+    _drawButton(id, label) {
+	return `
+          <input type="button" class="button" id="${id}" value="${label}"/>`;
+    }
+    
+    _drawChoices(leftChoiceEl, rightChoiceEl) {
+	return `
+        <div class="row">
+          <div class="answ_left">${leftChoiceEl}</div>
+          <div class="answ_right">${rightChoiceEl}</div>
+        </div>`;
     }
     
     _drawPlayer() {
@@ -223,21 +245,58 @@ class QuizView extends Observer {
     
     /** Draw image, label and player (if applicable) for the answer frame */
     _revealChoice(elName, choice, chosenClass) {
-	var responseEl = `
-        <div class="miniplayer-wrapper" id="miniplayer_${elName}">
-          <div id="minispectrogram_${elName}" class="specVisibleWindowDiv">
-            <div id="controls">
-              <button class="miniplayButton" data-action="miniplay_${elName}" id="miniplay_${elName}">
-                <svg class="minibuttonIcon Icon Icon--play" role="img">
-                  <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--play"></use>
-                </svg>
-              </button>
+	var responseEl = "";
+	if (choice.audio != "") {
+	    responseEl += `
+          <div class="miniplayer-wrapper" id="miniplayer_${elName}">
+            <div id="minispectrogram_${elName}" class="specVisibleWindowDiv">
+              <div id="controls">
+                <button class="miniplayButton" data-action="miniplay_${elName}" id="miniplay_${elName}">
+                  <svg class="minibuttonIcon Icon Icon--play" role="img">
+                    <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--play"></use>
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
-        </div>
-        <img src="${MEDIA_PATH}/${choice.image}" class="imgButton miniButton"/>
-        <div class="answ_button miniButton ${chosenClass}">${choice.label}</div>`;
+          </div>`;
+	}
+        responseEl += `
+          <img src="${MEDIA_PATH}/${choice.image}" class="imgButton miniButton"/>
+          <div class="answ_button miniButton ${chosenClass}">${choice.label}</div>`;
 	return responseEl;
     }
 
+    _drawFooter(progress) {
+	var correctClass = progress.currentAnswerCorrect()? "correct":"wrong";
+	var feedbackAnswer = this._drawFeedbackAnswer(progress);
+	var nextButton = this._drawButton('continue_quiz', "Weiter");;
+	var footerEl = `
+          <div id="margin_left" class="column ${correctClass}"></div>    
+          <div id="footer_left" class="column ${correctClass}">${feedbackAnswer}</div>
+          <div id="footer_right" class="column ${correctClass}">${nextButton}</div>
+          <div id="margin_right" class="column ${correctClass}"></div>    
+        `;
+	return footerEl;
+
+    }
+    
+    _drawFeedbackAnswer(progress) {
+	var correctIcon;
+	if (progress.currentAnswerCorrect()) {
+	    correctIcon = `
+              <svg class="buttonIcon Icon--correct icon_feedback" role="img">
+                <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--correct"></use>
+              </svg>`;
+	} else {
+	    correctIcon = `
+              <svg class="buttonIcon Icon--wrong icon_feedback" role="img">
+                <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--wrong"></use>
+              </svg>`;
+	}
+	var responseEl = `
+          <div>
+            <div>${correctIcon}<h2>Richtige Lösung</h2>${progress.currentQuestion.correctAnswer.label}</div>
+          </div>`;
+	return responseEl;
+    }
 }
