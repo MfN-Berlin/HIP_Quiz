@@ -14,6 +14,8 @@ class ProgressView extends Observer {
 	if (progress.quizStarted()) {
 	    this.clear();
 	    this.show(progress);
+	} else {
+	    this.clear();
 	}
     }
     
@@ -72,7 +74,7 @@ class ProgressView extends Observer {
     
     _drawCloseButton() {
 	return `
-          <div id="close">
+          <div id="close" onclick="controller.quit()">
             <svg class="icon" role="img">
               <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--close"></use>
             </svg>

@@ -5,15 +5,14 @@ var audiofile_1;
 var SpectrogramPlugin_1 = window.WaveSurfer.spectrogram;
 
 /**
-   Javacript View for the Quiz
-
-   @see https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine/tree/master/docs
-*/
+ *  Javacript View for the Quiz
+ *
+ *  @see https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine/tree/master/docs
+ */
 class QuizView extends Observer {
 
     constructor() {
 	super();
-	this.controller = null;
 	this.ui = [];
     }
 
@@ -22,27 +21,34 @@ class QuizView extends Observer {
     }
     
     update(progress) {
-	// quiz has not started yet
-	if (!progress.quizStarted()) {
+	if (!progress.quizStarted() && progress.qAnswered == 0) {
+	    // quiz has not started yet
 	    this.clear();
 	    this.showQuizInstructions();
 	    
-	    // quiz has started, show question
 	} else if (progress.quizStarted() && progress.state == null) {
+	    // quiz has started, show question
 	    this.clear();
 	    this.showCurrentQuestion(progress);
 	    
-	    // question was answered, show feedback
 	} else if (progress.quizStarted() && progress.state != null) {
+	    // question was answered, show feedback
 	    this.clear();
 	    this.showQuestionFeedback(progress);
+	    
+	} else if (!progress.quizStarted() && progress.qAnswered > 0) {
+	    // quiz finished, show feedback
+	    this.clear();
+	    this.showQuizFeedback(progress);
 	}
     }
 
     /** Show the start page of the quiz */
     showQuizInstructions() {
 	document.getElementById("left").innerHTML = `<img src="${this.ui.logo}" />`;
-	document.getElementById("right").innerHTML = `<h1>${this.ui.title}</h1>\n${this.ui.start}` + this._drawButton('start_quiz', "Spiel starten");
+	document.getElementById("right").innerHTML = `
+           <h1>${this.ui.title}</h1>
+           ${this.ui.start}`;
     }
     
     /** Show a question and 2 choices */
@@ -87,23 +93,22 @@ class QuizView extends Observer {
 	var answerEl = this._drawChoices(leftChoiceEl, rightChoiceEl);
 	document.getElementById("right").innerHTML = answerEl;
 
-	// draw feedback footer
-	var footerEl = this._drawFooter(progress);
-	document.getElementById("footer").innerHTML = footerEl;
-
 	// add control events and draw the waves (must be at the end of this method)
 	this._initFeedbackPlayers(choices);
     }
 
-    showQuizFeedback() {
-	throw "unimplemented";
+    /** Show score */
+    showQuizFeedback(progress) {
+	var feedbackEl = this._drawQuizFeedback(progress);
+	var pinguinEl = this._drawPinguinEl();
+	document.getElementById("left").innerHTML = pinguinEl;
+	document.getElementById("right").innerHTML = feedbackEl;
     }
     
     /** Clear all elements from this view */
     clear() {
 	document.getElementById("left").innerHTML = "";
 	document.getElementById("right").innerHTML = "";
-	document.getElementById("footer").innerHTML = "";
 	stopOtherPlayers();
     }
 
@@ -207,11 +212,6 @@ class QuizView extends Observer {
 	}
     }
 
-    _drawButton(id, label) {
-	return `
-          <input type="button" class="button" id="${id}" value="${label}"/>`;
-    }
-    
     _drawChoices(leftChoiceEl, rightChoiceEl) {
 	return `
         <div class="row">
@@ -266,37 +266,36 @@ class QuizView extends Observer {
 	return responseEl;
     }
 
-    _drawFooter(progress) {
-	var correctClass = progress.currentAnswerCorrect()? "correct":"wrong";
-	var feedbackAnswer = this._drawFeedbackAnswer(progress);
-	var nextButton = this._drawButton('continue_quiz', "Weiter");;
-	var footerEl = `
-          <div id="margin_left" class="column ${correctClass}"></div>    
-          <div id="footer_left" class="column ${correctClass}">${feedbackAnswer}</div>
-          <div id="footer_right" class="column ${correctClass}">${nextButton}</div>
-          <div id="margin_right" class="column ${correctClass}"></div>    
-        `;
-	return footerEl;
-
+    
+    _drawPinguinEl() {
+	return `<img class="feedbackImg" src="/modules/custom/hip_quiz/images/2010_07_16_11pinguine-ozeaneum_jm-schlorke-7748.jpg">`;
     }
     
-    _drawFeedbackAnswer(progress) {
-	var correctIcon;
-	if (progress.currentAnswerCorrect()) {
-	    correctIcon = `
-              <svg class="buttonIcon Icon--correct icon_feedback" role="img">
-                <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--correct"></use>
-              </svg>`;
+    _drawQuizFeedback(progress) {
+	var responseEl, textEl;
+	var discriminant = progress.qTotal/2;
+	
+	if (progress.qCorrect == progress.qTotal) {
+	    textEl = `
+              <p class="quizFeedbackText">${this.ui.feedback_alles_richtig}</p>
+              <p class="score">Es wurden alle Fragen richtig beantwortet!</p>
+            `;
+
+	} else if (progress.qCorrect > discriminant) {
+	    textEl = `
+              <p class="quizFeedbackText">${this.ui.feedback_gut}</p>
+              <p class="score">Es wurden ${progress.qCorrect} von ${progress.qTotal} Fragen richtig beantwortet!</p>
+            `;
+
 	} else {
-	    correctIcon = `
-              <svg class="buttonIcon Icon--wrong icon_feedback" role="img">
-                <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--wrong"></use>
-              </svg>`;
+	    textEl = `
+              <p class="quizFeedbackText">${this.ui.feedback_mittel}</p>
+              <p class="score">Es wurden ${progress.qCorrect} von ${progress.qTotal} Fragen richtig beantwortet!</p>
+            `;
 	}
-	var responseEl = `
-          <div>
-            <div>${correctIcon}<h2>Richtige Lösung</h2>${progress.currentQuestion.correctAnswer.label}</div>
-          </div>`;
+	responseEl = `
+          <div class="quizFeedback">${textEl}</div>
+        `;
 	return responseEl;
     }
 }

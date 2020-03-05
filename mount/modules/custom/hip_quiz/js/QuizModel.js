@@ -33,8 +33,8 @@ class QuizModel extends Observable {
     }
 
     gotoFirstQuestion() {
-	this.setChanged();
 	this.progress.start(this.question[0]);
+	this.setChanged();
 	this.notifyObservers(this.progress);
 	this.clearChanged();
     }
@@ -47,9 +47,27 @@ class QuizModel extends Observable {
     getCorrectAnswer() {
 	return this.progress.currentQuestion.correctAnswer
     }
-    
+
+    /**
+     * Call to determine if there are any more unanswered questions
+     *
+     * @return boolean true if more questions, false otherwise
+     */
+    moreQuestionsAvailable() {
+	return (this.progress.qAnswered < this.progress.qTotal);
+    }
+
+    /**
+     * Called when the next question is loaded.
+     * Assumes that the end of the quiz has not been reached.
+     * Call moreQuestionsAvailable in the controller first. 
+     */
     gotoNextQuestion() {
-	throw "unimplemented";
+	var currentQuestion = this.question[this.progress.qAnswered];
+	this.progress.gotoQuestion(currentQuestion);
+	this.setChanged();
+	this.notifyObservers(this.progress);
+	this.clearChanged();
     }
 
     /**
@@ -62,6 +80,7 @@ class QuizModel extends Observable {
 	this.progress.state = isCorrect;
 	this.progress.qAnswered += 1;
 	if (isCorrect) {
+	    this.progress.qCorrect += 1;
 	    this.progress.qCorrectRow += 1;
 	} else {
 	    this.progress.qCorrectRow = 0;
@@ -71,8 +90,12 @@ class QuizModel extends Observable {
 	this.clearChanged();	
     }
 
+    /** Called when the last question has ben answered */
     quizFinished() {
-	throw "unimplemented";
+	this.progress.started = false;
+	this.setChanged();
+	this.notifyObservers(this.progress);
+	this.clearChanged();	
     }
 
 }

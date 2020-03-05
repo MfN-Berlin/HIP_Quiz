@@ -6,9 +6,11 @@ Javacript Controller for the Quiz
 
 class QuizController {
     
-    constructor(model, view) {
+    constructor(model) {
 	this.model = model
-	this.view = view
+	this.settings = null;
+	this.questionnaire = null;
+	this.uiTexts = null;
     }
 
     /** 
@@ -41,29 +43,22 @@ class QuizController {
 	    var qObj = this._parseQuestion(q);
 	    this.questionnaire.push(qObj);
 	}
-	// store UI texts in the view
-	this.view.setUi(configuration.ui);
-    }
-
-    /**
-     * Randomly selects questions and adds them to the model.
-     */
-    initialize() {
-	this.model.reset();
-	var numQuestions = this.settings.num_questions;
-	if (numQuestions > this.questionnaire.length) throw "Not enough questions";
-	this._shuffleArray(this.questionnaire);
-	for (var i = 0; i < numQuestions; i++) {
-	    this.model.addQuestion(this.questionnaire[i]);
-	}
+	this.uiTexts = configuration.ui;
     }
 
     launch() {
+	this._initialize();
 	this.model.gotoFirstQuestion();
     }
 
-    gotoNextQuestion() {
-	throw "unimplemented";
+    continueQuiz() {
+	if (this.model.moreQuestionsAvailable()) {
+	    // there are still more questions
+	    this.model.gotoNextQuestion();
+	} else {
+	    // no more questions
+	    this.model.quizFinished();
+	}
     }
 
     /**
@@ -77,11 +72,7 @@ class QuizController {
 	this.model.updateAnswer(isCorrect);
     }
 
-    compileReport() {
-	throw "unimplemented";
-    }
-
-    acceptUserFeedback() {
+    restart() {
 	throw "unimplemented";
     }
 
@@ -90,12 +81,25 @@ class QuizController {
     }
 
     quit() {
-	throw "unimplemented";
+	window.location.reload();
     }
     
     /****************************************************/
     /**               Private methods                   */
     /****************************************************/
+
+    /**
+     * Randomly selects questions and adds them to the model.
+     */
+    _initialize() {
+	this.model.reset();
+	var numQuestions = this.settings.num_questions;
+	if (numQuestions > this.questionnaire.length) throw "Not enough questions";
+	this._shuffleArray(this.questionnaire);
+	for (var i = 0; i < numQuestions; i++) {
+	    this.model.addQuestion(this.questionnaire[i]);
+	}
+    }
 
     /** Takes a JSON fragment describing a question and returns a Question object. */
     _parseQuestion(q) {

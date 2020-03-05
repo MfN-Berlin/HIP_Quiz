@@ -20,7 +20,7 @@ QUnit.test( "Controller: controller can read configuration file", function( asse
 
 QUnit.test( "Controller: controller can initialize Model", function( assert ) {
     controller = setupController();
-    controller.initialize();
+    controller.launch();
     assert.equal( controller.settings.num_questions, 6 );
     assert.equal( controller.model.question.length, controller.settings.num_questions );
     assert.equal( controller.model.progress.qTotal, 6 );
@@ -28,7 +28,6 @@ QUnit.test( "Controller: controller can initialize Model", function( assert ) {
 
 QUnit.test( "Controller: controller can launch the quiz", function( assert ) {
     controller = setupController();
-    controller.initialize();
     controller.launch();
     assert.ok( controller.model.progress.quizStarted() );
     assert.equal( controller.model.progress.qAnswered, 0 );

@@ -16,6 +16,7 @@
 <script src="/modules/custom/hip_quiz/js/hip.wavesurfer.spectrogram.js"></script>
 <script src="/modules/custom/hip_quiz/js/player_actions.js"></script>
 <script src="/modules/custom/hip_quiz/js/ProgressView.js"></script>
+<script src="/modules/custom/hip_quiz/js/FooterView.js"></script>
 <script src="/modules/custom/hip_quiz/js/QuizView.js"></script>
 
 <script src="/modules/custom/hip_quiz/js/QuizController.js"></script>
@@ -24,23 +25,23 @@
 <script language="javascript">
   var controller; // controller should accessible for the page buttons
   
-  // Start the game when button is pressed
+  // Instantiate MVC, load configuration, draw launch screen (model.reset)
   document.addEventListener('DOMContentLoaded', function() {
       try {
 	  var model = new QuizModel();
 	  var view = new QuizView();
 	  var progressView = new ProgressView();
+	  var footerView = new FooterView();
 	  model.addObserver(view);
 	  model.addObserver(progressView);
+	  model.addObserver(footerView);
 	  controller = new QuizController(model, view);
 	  controller.loadConfiguration("/modules/custom/hip_quiz/js/questionnaire.json");
-	  model.reset();
-	  button = document.getElementById("start_quiz");
-	  button.addEventListener("click", function() {
-	      controller.initialize();
-	      controller.launch();
-	  });
+	  // store UI texts in the view
+	  view.setUi(controller.uiTexts);
+	  footerView.setUi(controller.uiTexts);
 
+	  model.reset();
       } catch(err) {
   	  console.log(err);
   	  document.getElementById("messages").innerHTML += "Script error";

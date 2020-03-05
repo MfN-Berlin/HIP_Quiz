@@ -7,24 +7,44 @@ Javacript Progress class for the Quiz
 class Progress {
     
     constructor() {
-	this.orderChoices = null;
+	/** boolean true if the quiz has started */
 	this.started = false;
+	/** integer total number of questions in quiz */
 	this.qTotal = 0;
+	/** integer total questions answered */
 	this.qAnswered = 0;
+	/** integer total number of correct answers */
+	this.qCorrect = 0;
+	/** correct answers in a row */
 	this.qCorrectRow = 0;
+	/** true if last answer was correct */
 	this.state = null
-	this.answers = []
+	/** Question the question currently loaded */
+	this.currentQuestion = null;
+	/** list<Answer> answers in the order they will be displayed */
+	this.orderChoices = null;
     }
 
     /** 
-	Set progress at square one
-
-	@param Question question the current question object
-    */
+     *	Set progress at square one
+     *
+     *	@param Question question the current question object
+     */
     start(question) {
 	this.started = true;
 	this.qAnswered = 0;
+	this.qCorrect = 0;
 	this.qCorrectRow = 0;
+	this.gotoQuestion(question);
+    }
+
+    /**
+     *  Load question and continue progress
+     *
+     *	@param Question question the current question object
+     */
+    gotoQuestion(question) {
+	this.state = null;
 	this.currentQuestion = question;
 	this._shuffle();
     }
@@ -40,7 +60,7 @@ class Progress {
 	return this.orderChoices;
     }
 
-    /** 
+    /**
      * Returns whether the left (0) or right(1) answer was clicked on 
      *
      * @return int
@@ -61,8 +81,13 @@ class Progress {
 	return chosen;
     }
 
+    /**
+     * The current answer is correct when at least one of these conditions is met:
+     * # the state of the progress object is set to true
+     * # the state of the progress object is null (the question has not been answered), but the previous answer was right
+     */
     currentAnswerCorrect() {
-	return this.state;
+	return this.state || (!this.state && this.qCorrectRow > 0);
     }
     
     /** 

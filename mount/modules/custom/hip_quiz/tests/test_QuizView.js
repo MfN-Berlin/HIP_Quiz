@@ -10,6 +10,6 @@ function setupView() {
 QUnit.test( "View: view has texts from configuration file", function( assert ) {
     view = setupView();
     assert.ok( view.ui, "view has texts from configuration file" );
-    assert.equal( Object.keys(view.ui).length, 6, "view has all texts" );
+    assert.equal( Object.keys(view.ui).length, 10, "view has all texts" );
 });
 
