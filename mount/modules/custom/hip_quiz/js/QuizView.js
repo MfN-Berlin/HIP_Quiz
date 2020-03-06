@@ -238,7 +238,7 @@ class QuizView extends Observer {
     /** Draw image and label for the question frame */
     _drawChoice(choice) {
 	var responseEl = `
-        <img src="${MEDIA_PATH}/${choice.image}" class="imgButton" onclick="controller.recordAnswer('${choice.label}')"/>
+        <img src="${MEDIA_PATH}/${choice.image.file}" class="imgButton" onclick="controller.recordAnswer('${choice.label}')"/>
         <div class="answ_button" onclick="controller.recordAnswer('${choice.label}')">${choice.label}</div>`;
 	return responseEl;
     }
@@ -261,7 +261,7 @@ class QuizView extends Observer {
           </div>`;
 	}
         responseEl += `
-          <img src="${MEDIA_PATH}/${choice.image}" class="imgButton miniButton"/>
+          <img src="${MEDIA_PATH}/${choice.image.file}" class="imgButton miniButton"/>
           <div class="answ_button miniButton ${chosenClass}">${choice.label}</div>`;
 	return responseEl;
     }

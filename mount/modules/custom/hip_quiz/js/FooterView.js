@@ -23,7 +23,7 @@ class FooterView extends Observer {
 	} else if (progress.quizStarted() && progress.state == null) {
 	    // quiz has started, show question
 	    this.clear();
-	    this.showPlaceholder();
+	    this.showPlaceholder(progress);
 	    
 	} else if (progress.quizStarted() && progress.state != null) {
 	    // question was answered, show feedback
@@ -42,8 +42,8 @@ class FooterView extends Observer {
 	document.getElementById("footer").innerHTML = startFooter;
     }
     
-    showPlaceholder() {
-	var placeholder = this._drawPlaceholder();
+    showPlaceholder(progress) {
+	var placeholder = this._drawPlaceholder(progress);
 	document.getElementById("footer").innerHTML = placeholder;
     }
 
@@ -65,8 +65,10 @@ class FooterView extends Observer {
     /**               Private methods                   */
     /****************************************************/
 
-    _drawPlaceholder() {
-	return `<div id="footerFill" style="height: 116px"></div>`;
+    _drawPlaceholder(progress) {
+	return `
+          <div id="footerFill"></div>
+          ${this._drawCredits(progress)}`;
     }
     
     _drawButton(id, label, action) {
@@ -74,13 +76,22 @@ class FooterView extends Observer {
           <input type="button" class="button" id="${id}" value="${label}" onclick="${action}"/>`;
     }
 
+    _drawCredits(progress) {
+	var c = progress.orderChoices;
+	var creditLinks = `
+          <a href="${c[0].image.link}" target="credits">${c[0].image.credit}</a> - ${c[0].image.license}, 
+          <a href="${c[1].image.link}" target="credits">${c[1].image.credit}</a> - ${c[1].image.license}`;
+	return `
+          <div id="footerCredits">${this.ui.credits}:${creditLinks}</div>`;
+    }
+    
     _drawStartFooter() {
 	var startButton = this._drawButton('start_quiz', this.ui.button_start, "controller.launch()");
 	var footerEl = `
           <div id="margin_left" class="column"></div>    
           <div id="footer_left" class="column"></div>
           <div id="footer_right" class="column">${startButton}</div>
-          <div id="margin_right" class="column"></div>    
+          <div id="margin_right" class="column"></div>
         `;
 	return footerEl;
     }
@@ -94,6 +105,7 @@ class FooterView extends Observer {
           <div id="footer_left" class="column ${correctClass}">${feedbackAnswer}</div>
           <div id="footer_right" class="column ${correctClass}">${nextButton}</div>
           <div id="margin_right" class="column ${correctClass}"></div>    
+          ${this._drawCredits(progress)}
         `;
 	return footerEl;
 

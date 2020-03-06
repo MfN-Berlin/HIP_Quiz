@@ -12,7 +12,8 @@
 	"feedback_alles_richtig":"Fantastisch! Du hast alle Fragen richtig beantwortet!",
 	"button_start": "Spiel starten",
 	"button_restart": "Neues Spiel spielen",
-	"button_quit": "Spiel beenden"
+	"button_quit": "Spiel beenden",
+	"credits": "Mediennachweis"
     },
     "settings" : {
 	"num_questions" : 6
@@ -24,12 +25,22 @@
 	    "correct": {
 		"label": "Finnwal",
 		"audio": "finnwal.mp3",
-		"image": "finnwal.jpg"
+		"image": {
+		    "file": "finnwal.jpg",
+		    "credit": "Aqqa Rosing-Asvid - Visit Greenland",
+		    "license": "CC BY",
+		    "link": "https://en.wikipedia.org/wiki/Fin_whale#/media/File:Finhval_(1).jpg"
+		}
 	    },
 	    "wrong": {
 		"label": "Sonar",
 		"audio": "sonar.mp3",
-		"image": "sonar.jpg"
+		"image": {
+		    "file": "sonar.jpg",
+		    "credit": "NOAA",
+		    "license": "Gemeinfrei",
+		    "link": "https://oceanservice.noaa.gov/gallery/image.php?siteName=nosimages&cat=Multibeam%20Sonar"
+		}
 	    }
 	},
 	{
@@ -38,12 +49,22 @@
 	    "correct": {
 		"label": "Buckelwal",
 		"audio": "buckelwal.mp3",
-		"image": "buckelwal.jpg"
+		"image": {
+		    "file": "buckelwal.jpg",
+		    "credit": "Dr. Louis M. Herman. - NOAA Photo Library",
+		    "license": "Gemeinfrei",
+		    "link": "https://de.wikipedia.org/wiki/Buckelwal#/media/Datei:Humpback_whales_in_singing_position.jpg"
+		}
 	    },
 	    "wrong": {
 		"label": "Wollschwein",
 		"audio": "",
-		"image": "wollschwein.jpg"
+		"image": {
+		    "file": "wollschwein2.jpg",
+		    "credit": "Nienetwiler",
+		    "license": "CC BY",
+		    "link": "https://commons.wikimedia.org/wiki/Category:Mangalica?uselang=de#/media/File:101028_Wollschwein-Eber_Alphons_002.jpg"
+		}
 	    }
 	},
 	{
@@ -52,12 +73,23 @@
 	    "correct": {
 		"label": "Blitz",
 		"audio": "blitz.mp3",
-		"image": "blitz.jpg"
+		"image": {
+		    "file": "blitz2.jpg",
+		    "credit": "Ian Boggs",
+		    "license": "CC BY",
+		    "link": "https://commons.wikimedia.org/wiki/Lightning?uselang=de#/media/File:Phatman_-_Lightning_on_the_Columbia_River_(by-sa).jpg"
+		}
 	    },
 	    "wrong": {
 		"label": "Airgun",
 		"audio": "airgun.mp3",
-		"image": "airgun.jpg"
+		"image": {
+		    "file": "airgun2.jpg",
+		    "credit": "Dr. Hannes Grobe, Alfred Wegener Institute for Polar and Marine Research, Bremerhaven",
+		    "license": "CC BY-SA",
+		    "link": "https://en.wikipedia.org/wiki/Seismic_source#/media/File:Air_gun_hg.jpg"
+		    
+		}
 	    }
 	},
 	{
@@ -66,12 +98,22 @@
 	    "correct": {
 		"label": "Schweinswal",
 		"audio": "schweinswal.mp3",
-		"image": "schweinswal.jpg"
+		"image": {
+		    "file": "schweinswal2.jpg",
+		    "credit": "Ecomare/Salko de Wolf",
+		    "license": "CC BY-SA",
+		    "link": "https://en.wikipedia.org/wiki/Harbour_porpoise#/media/File:Ecomare_-_bruinvis_Michael_in_2015_(bruinvis-michael2015-9313-sw).jpg"
+		}
 	    },
 	    "wrong": {
 		"label": "Fliege",
 		"audio": "fliege.mp3",
-		"image": "fliege.jpg"
+		"image": {
+		    "file": "fliege2.jpg",
+		    "credit": "Kjetil Fjellheim",
+		    "license": "CC BY 2.0",
+		    "link": "https://commons.wikimedia.org/wiki/Category:Brachycera?uselang=de#/media/File:Fluer_(Brachycera)_(9233393518).png"
+		}
 	    }
 	},
 	{
@@ -80,12 +122,22 @@
 	    "correct": {
 		"label": "Orcas",
 		"audio": "orcas.mp3",
-		"image": "orcas.jpg"
+		"image": {
+		    "file": "orcas.jpg",
+		    "credit": "Robert Pitman",
+		    "license": "Gemeinfrei",
+		    "link": "https://commons.wikimedia.org/wiki/File:Type_C_Orcas.jpg?uselang=de"
+		}
 	    },
 	    "wrong": {
 		"label": "Papageien",
 		"audio": "papageien.mp3",
-		"image": "papageien.jpg"
+		"image": {
+		    "file": "papageien2.jpg",
+		    "credit": "H.Zell",
+		    "license": "CC BY-SA 3.0",
+		    "link": "https://commons.wikimedia.org/wiki/File:Ara_ararauna_01.jpg?uselang=de"
+		}
 	    }
 	},
 	{
@@ -94,12 +146,22 @@
 	    "correct": {
 		"label": "Mönchsrobbe",
 		"audio": "moenchsrobbe.mp3",
-		"image": "moenchsrobbe.jpg"
+		"image": {
+		    "file": "moenchsrobbe.jpg",
+		    "credit": "U.S. Fish and Wildlife Service",
+		    "license": "Gemeinfrei",
+		    "link": "https://digitalmedia.fws.gov/digital/collection/natdiglib/id/4421/rec/6"
+		}
 	    },
 	    "wrong": {
 		"label": "ROV",
 		"audio": "",
-		"image": "rov.jpg"
+		"image": {
+		    "file": "rov.jpg",
+		    "credit": "NOAA",
+		    "license": "Gemeinfrei",
+		    "link": "https://commons.wikimedia.org/wiki/File:ROV_Hercules_2005.JPG"
+		}
 	    }
 	},
 	{
@@ -108,12 +170,22 @@
 	    "correct": {
 		"label": "Boot",
 		"audio": "boot.mp3",
-		"image": "boot.jpg"
+		"image": {
+		    "file": "boot.jpg",
+		    "credit": "Deutsches Meeresmuseum",
+		    "license": "unbekannt",
+		    "link": "https://www.deutsches-meeresmuseum.de"
+		}
 	    },
 	    "wrong": {
 		"label": "Grindwale",
 		"audio": "grindwale.mp3",
-		"image": "grindwale.jpg"
+		"image": {
+		    "file": "grindwale.jpg",
+		    "credit": "IWDG Marine Mammal Observer",
+		    "license": "CC BY-SA 3.0",
+		    "link": "https://commons.wikimedia.org/wiki/File:LF_Pilot_Whales_Goban_Spur.jpg"
+		}
 	    }
 	},
 	{
@@ -122,12 +194,22 @@
 	    "correct": {
 		"label": "Pistolenkrebs",
 		"audio": "pistolenkrebs.mp3",
-		"image": "pistolenkrebs.jpg"
+		"image": {
+		    "file": "pistolenkrebs.jpg",
+		    "credit": "Steve Childs",
+		    "license": "CC BY 2.0",
+		    "link": "https://www.flickr.com/photos/11076453@N00/5386276787"
+		}
 	    },
 	    "wrong": {
 		"label": "Regen",
 		"audio": "regen.mp3",
-		"image": "regen.jpg"
+		"image": {
+		    "file": "regen.jpg",
+		    "credit": "jam343",
+		    "license": "CC BY",
+		    "link": "https://www.flickr.com"
+		}
 	    }
 	},
 	{
@@ -136,12 +218,22 @@
 	    "correct": {
 		"label": "Pottwal",
 		"audio": "pottwal.mp3",
-		"image": "pottwal.jpg"
+		"image": {
+		    "file": "pottwal.jpg",
+		    "credit": "Gabriel Barathieu",
+		    "license": "CC BY-SA 2.0",
+		    "link": "https://commons.wikimedia.org/wiki/File:Mother_and_baby_sperm_whale.jpg"
+		}
 	    },
 	    "wrong": {
 		"label": "Amsel",
 		"audio": "amsel.mp3",
-		"image": "amsel.jpg"
+		"image": {
+		    "file": "amsel.jpg",
+		    "credit": "Andreas Trepte",
+		    "license": "CC BY-SA 2.5",
+		    "link": "https://de.wikipedia.org/wiki/Amsel#/media/Datei:Common_Blackbird.jpgoutube.com/watch?v=Rro4thc8L7I"
+		}
 	    }
 	},
 	{
@@ -150,12 +242,22 @@
 	    "correct": {
 		"label": "Hummer",
 		"audio": "hummer.mp3",
-		"image": "hummer.jpg"
+		"image": {
+		    "file": "hummer.jpg",
+		    "credit": "Steven G. Johnson",
+		    "license": "CC BY-SA 2.5",
+		    "link": "https://commons.wikimedia.org/wiki/File:Blue-lobster.jpg?uselang=de"
+		}
 	    },
 	    "wrong": {
 		"label": "Ente",
 		"audio": "ente.mp3",
-		"image": "ente.jpg"
+		"image": {
+		    "file": "ente.jpg",
+		    "credit": "Pixabay",
+		    "license": "Pixabay Lizenz",
+		    "link": "https://pixabay.com/de/photos/ente-m%C3%A4nnlich-weiblich-teich-natur-70737/"
+		}
 	    }
 	},
 	{
@@ -164,12 +266,22 @@
 	    "correct": {
 		"label": "Eisbergkollision",
 		"audio": "eisbergkollision.mp3",
-		"image": "eisbergkollision.jpg"
+		"image": {
+		    "file": "eisbergkollision.jpg",
+		    "credit": "Michael Haferkamp",
+		    "license": "CC BY-SA 3.0",
+		    "link": "https://commons.wikimedia.org/w/index.php?curid=12761708"
+		}
 	    },
 	    "wrong": {
 		"label": "Seebeben",
 		"audio": "seebeben.mp3",
-		"image": "seebeben.jpg"
+		"image": {
+		    "file": "seebeben.jpg",
+		    "credit": "Yamaguchi先生",
+		    "license": "CC BY-SA 3.0",
+		    "link": "https://es.wikipedia.org/wiki/Sism%C3%B3grafo#/media/Archivo:Kinemetrics_seismograph.jpg"
+		}
 	    }
 	},
 	{
@@ -178,12 +290,22 @@
 	    "correct": {
 		"label": "Zwergwal",
 		"audio": "zwergwal.mp3",
-		"image": "zwergwal.jpg"
+		"image": {
+		    "file": "zwergwal.jpg",
+		    "credit": "Len2040",
+		    "license": "CC BY-ND 2.0",
+		    "link": "https://www.flickr.com/photos/lenjoh/8628266356"
+		}
 	    },
 	    "wrong": {
 		"label": "Starwars",
 		"audio": "",
-		"image": "starwars.jpg"
+		"image": {
+		    "file": "starwars.jpg",
+		    "credit": "Lucasfilm Ltd",
+		    "license": "Alle Rechte vorbehalten",
+		    "link": "https://www.lucasfilm.com/"
+		}
 	    }
 	},
 	{
@@ -192,12 +314,22 @@
 	    "correct": {
 		"label": "Walross",
 		"audio": "walross.mp3",
-		"image": "walross.jpg"
+		"image": {
+		    "file": "walross.jpg",
+		    "credit": "Captain Budd Christman, NOAA Corps",
+		    "license": "Gemeinfrei",
+		    "link": "https://de.wikipedia.org/wiki/Walross#/media/Datei:Noaa-walrus22.jpg"
+		}
 	    },
 	    "wrong": {
 		"label": "Pfahlgruendung",
 		"audio": "pfahlgruendung.mp3",
-		"image": "pfahlgruendung.jpg"
+		"image": {
+		    "file": "pfahlgruendung.jpg",
+		    "credit": "Ad Meskens",
+		    "license": "CC BY-SA 3.0",
+		    "link": "https://commons.wikimedia.org/wiki/File:Prinses_Amalia_windmolenpark_4.jpg?uselang=nl"
+		}
 	    }
 	}
     ]
