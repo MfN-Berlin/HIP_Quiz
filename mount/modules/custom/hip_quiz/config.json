@@ -7,7 +7,7 @@
 	"help_long" : "<h1>Spielerklärung</h1> Es wird gespielt, indem man sich das Hörbeispiel anhört und danach eine der beiden Antwortmöglichkeiten auswählt, indem man auf das entsprechende Bild klickt. Zum Fortfahren wird der \"Weiter\" Button genutzt.<p>Die Hörbeispiele werden entweder automatisch abgespielt, oder können über den \"Play\" Button gestartet werden. Der \"Stop\" Button kann die Wiedergabe jederzeit beenden.</p><p>Gelegentlich erscheint nach erfolgter Beantwortung einer Frage auch ein \"Gegenbeispiel\" Button. Dieser spielt ein Hörbeispiel der falschen Antwortmöglichkeit ab.</p><p>Nach beantwortung aller Fragen erfolgt eine kurze Auswertung.</p><h1>Zusätliche Schaltflächen</h1>Der \"Schliessen\" Button schliesst das Programm.<p>Mit dem \"?\" Button kann man sich diese Programmhilfe jederzeit wieder anzeigen lassen.</p><p>Bei weiteren Fragen wenden Sie sich bitte an einen Mitarbeiter des Meeresmuseums. Er wird ihnen gerne weitere Fragen beantworten.</p>",
 	"correct": "Richtig!",
 	"wrong": "Die richtige Lösung lautet:",
-	"feedback_mittel":"Glückswunsch, du hast das Quiz beendet.",
+	"feedback_mittel":"Bitte versuche es noch einmal.",
 	"feedback_gut":"Sehr beeindruckend!",
 	"feedback_alles_richtig":"Fantastisch! Du hast alle Fragen richtig beantwortet!",
 	"button_start": "Spiel starten",
