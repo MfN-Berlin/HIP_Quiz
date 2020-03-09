@@ -131,7 +131,7 @@
 	    },
 	    "wrong": {
 		"label": "Papageien",
-		"audio": "papageien.mp3",
+		"audio": "papagei.mp3",
 		"image": {
 		    "file": "papageien2.jpg",
 		    "credit": "H.Zell",
