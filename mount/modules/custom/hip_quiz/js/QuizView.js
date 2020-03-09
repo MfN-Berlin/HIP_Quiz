@@ -252,8 +252,8 @@ class QuizView extends Observer {
             <div id="minispectrogram_${elName}" class="specVisibleWindowDiv">
               <div id="controls">
                 <button class="miniplayButton" data-action="miniplay_${elName}" id="miniplay_${elName}">
-                  <svg class="minibuttonIcon Icon Icon--miniplay" role="img">
-                    <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--miniplay"></use>
+                  <svg class="minibuttonIcon Icon Icon--playpause" role="img">
+                    <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--playpause"></use>
                   </svg>
                 </button>
               </div>

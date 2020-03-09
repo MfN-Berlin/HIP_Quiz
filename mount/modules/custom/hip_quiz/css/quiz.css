@@ -247,8 +247,8 @@ h1.question {
 .miniplayer-wrapper #controls {
     position: absolute;
     z-index: 2;
-    margin-left: 45px;
-    margin-top: 10px;
+    margin-left: 55px;
+    margin-top: 25px;
 }
 
 .miniplayer-wrapper wave {

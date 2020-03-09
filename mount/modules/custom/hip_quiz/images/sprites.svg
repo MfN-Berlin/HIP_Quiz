@@ -6,6 +6,7 @@
     xmlns:cc="http://creativecommons.org/ns#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
     xmlns="http://www.w3.org/2000/svg"
     version="1.1">
 
@@ -83,6 +84,40 @@
       <path id="path4883" fill="#000000"
 	    d="m 516.11542,220.06105 c 27.74103,0 55.48205,0 83.22308,0 0,90.95857 0,181.91713 0,272.8757 -27.74103,0 -55.48205,0 -83.22308,0 0,-90.95857 0,-181.91713 0,-272.8757 z" />
     </g>
+  </symbol>
+  
+  <!-- Miniplayer Play-Pause Button -->
+  <symbol>
+  <g
+     id="Icon--playpause">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#f8f8f8;stroke-width:0.26458332;stroke-opacity:1"
+       id="rect912"
+       width="43.467262"
+       height="26.080357"
+       x="1.1717243"
+       y="1.2714295"
+       ry="7.1815476" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1"
+       inkscape:transform-center-x="-2.1733628"
+       d="m 22.149403,14.311603 -13.0401796,7.528751 0,-15.0575024 z"
+       id="path914" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1"
+       id="rect916"
+       width="3.4017856"
+       height="12.095239"
+       x="28.480495"
+       y="8.2639866" />
+    <rect
+       y="8.2639866"
+       x="35.756538"
+       height="12.095239"
+       width="3.4017856"
+       id="rect918"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1" />
+  </g>
   </symbol>
 
   <!--Wrong-->
