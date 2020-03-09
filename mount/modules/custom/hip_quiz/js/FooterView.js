@@ -67,8 +67,7 @@ class FooterView extends Observer {
 
     _drawPlaceholder(progress) {
 	return `
-          <div id="footerFill"></div>
-          ${this._drawCredits(progress)}`;
+          <div id="footerFill"></div>`;
     }
     
     _drawButton(id, label, action) {
