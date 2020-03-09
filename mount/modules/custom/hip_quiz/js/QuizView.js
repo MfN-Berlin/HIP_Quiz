@@ -45,7 +45,7 @@ class QuizView extends Observer {
 
     /** Show the start page of the quiz */
     showQuizInstructions() {
-	document.getElementById("left").innerHTML = `<img src="${this.ui.logo}" />`;
+	document.getElementById("left").innerHTML = this._drawBranding();
 	document.getElementById("right").innerHTML = `
            <h1>${this.ui.title}</h1>
            ${this.ui.start}`;
@@ -116,6 +116,10 @@ class QuizView extends Observer {
     /**               Private methods                   */
     /****************************************************/
 
+    _drawBranding() {
+	return `<img src="${this.ui.logo}" />`
+    }
+    
     /**
      * Load audio file and initialize spectrogram.
      *

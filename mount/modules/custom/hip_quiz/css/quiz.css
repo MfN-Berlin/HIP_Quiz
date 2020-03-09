@@ -294,13 +294,17 @@ h1.question {
     width: 100%;
 }
 
+#main_credits {
+    font-size: 9pt;
+    color:#aaa;
+}
+
 #footerCredits {
     font-size: 9pt;
     color:#999;
     height: 1.5em;
     width: 100%;
-    text-align: right;
-    padding-right: .5em;
+    text-align: center;
 }
 
 #footerCredits a {

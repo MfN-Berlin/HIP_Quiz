@@ -64,6 +64,9 @@ class FooterView extends Observer {
     /****************************************************/
     /**               Private methods                   */
     /****************************************************/
+    _drawBranding() {
+	return `<div id="footerCredits">${this.ui.main_credits}</div>`
+    }
 
     _drawPlaceholder(progress) {
 	return `
@@ -91,6 +94,7 @@ class FooterView extends Observer {
           <div id="footer_left" class="column"></div>
           <div id="footer_right" class="column">${startButton}</div>
           <div id="margin_right" class="column"></div>
+          ${this._drawBranding()}
         `;
 	return footerEl;
     }
