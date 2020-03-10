@@ -765,8 +765,9 @@ function (_util$Observer) {
           }
         }
 
-        if (_this2.params.interact) {
-          _this2.fireEvent('click', e, _this2.handleEvent(e));
+          if (_this2.params.interact) {
+	  // dont't allow FF in player, as confusing
+          //_this2.fireEvent('click', e, _this2.handleEvent(e));
         }
       });
       this.wrapper.addEventListener('dblclick', function (e) {
