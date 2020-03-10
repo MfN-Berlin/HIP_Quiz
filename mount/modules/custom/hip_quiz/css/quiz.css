@@ -25,7 +25,7 @@
 }
 
 #close {
-    margin-top: 1em;
+    margin-top: 1.25em;
     margin-left: 1em;
 }
 
@@ -189,28 +189,23 @@ h1.question {
     max-height: 160px;
     object-fit: cover;
     border-radius: 3em;
-    opacity: 90%;
-    cursor: pointer;
-}
-
-.imgButton:hover {
     opacity: 100%;
 }
 
 .answ_button {
     font-weight: 700;
-    opacity: 50%;
+    opacity: 40%;
     max-width: 160px;
     text-align: center;
     padding: .4em 0 .4em 0;
     border: 3px solid #999;
     border-radius: 15px;
     margin-left: 5px;
-    cursor: pointer;
+    cursor: default;
 }
 
-.answ_button:hover {
-    opacity: 100%;
+.answ_button_hover_class:hover {
+    opacity: 100%!important;
 }
 
 .answ_left {

@@ -12,7 +12,27 @@ toggle = function() {
 
 showControls = function() {
     document.getElementById("controls").style.display="block";
-    document.querySelector("#spectrogram_1 wave").style.display="none";
+    var specEl = document.querySelector("#spectrogram_1 wave");
+    if (specEl) {
+	specEl.style.display="none";
+    }
+}
+
+enableAnswerButtons = function() {
+    var buttons = document.querySelectorAll(".answ_button");
+    for (var i=0; i < buttons.length; i++) { 
+	buttons[i].classList.add("answ_button_hover_class");
+	buttons[i].style.cursor="pointer";
+    }
+    controller.unlock();
+}
+
+disableAnswerButtons = function() {
+    var buttons = document.querySelectorAll(".answ_button");
+    for (var i=0; i < buttons.length; i++) { 
+	buttons[i].classList.remove("answ_button_hover_class");
+	buttons[i].style.cursor="default";
+    }
 }
 
 hideControls = function() {

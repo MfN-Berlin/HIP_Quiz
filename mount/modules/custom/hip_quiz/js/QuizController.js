@@ -11,6 +11,7 @@ class QuizController {
 	this.settings = null;
 	this.questionnaire = null;
 	this.uiTexts = null;
+	this.answersEnabled = false;
     }
 
     /** 
@@ -52,6 +53,7 @@ class QuizController {
     }
 
     continueQuiz() {
+	this.answersEnabled = false;
 	if (this.model.moreQuestionsAvailable()) {
 	    // there are still more questions
 	    this.model.gotoNextQuestion();
@@ -61,12 +63,17 @@ class QuizController {
 	}
     }
 
+    unlock() {
+	this.answersEnabled = true;
+    }
+    
     /**
      *  Receive the choice the user made by clicking on a button
      *
      *  @param answerStr String the label of the answer
      */
     recordAnswer(answerStr) {
+	if (!this.answersEnabled) return;
 	var correctAnswer = this.model.getCorrectAnswer();
 	var isCorrect = (answerStr == correctAnswer.label);
 	this.model.updateAnswer(isCorrect);
@@ -93,6 +100,7 @@ class QuizController {
      */
     _initialize() {
 	this.model.reset();
+	this.answersEnabled = false;
 	var numQuestions = this.settings.num_questions;
 	if (numQuestions > this.questionnaire.length) throw "Not enough questions";
 	this._shuffleArray(this.questionnaire);

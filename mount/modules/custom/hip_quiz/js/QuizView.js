@@ -93,6 +93,7 @@ class QuizView extends Observer {
 	var answerEl = this._drawChoices(leftChoiceEl, rightChoiceEl);
 	document.getElementById("right").innerHTML = answerEl;
 
+	disableAnswerButtons();
 	// add control events and draw the waves (must be at the end of this method)
 	this._initFeedbackPlayers(choices);
     }
@@ -148,9 +149,10 @@ class QuizView extends Observer {
 	    .querySelector('[data-action="play_1"]')
 	    .addEventListener('click', toggle);
 	// check each second if player hasn't reached the end of file
-	window.setInterval(function() {
+	this._initPlayerInterval = window.setInterval(function() {
             if (wavesurfer_1.backend.getPlayedPercents() == 1) {
 		showControls();
+		enableAnswerButtons();
 	    }
 	}, 1000);
     }
@@ -161,10 +163,11 @@ class QuizView extends Observer {
      * @param choices List<Answer> List of answer objects for this question
      */
     _initFeedbackPlayers(choices) {
-	
+	window.clearInterval(this._initPlayerInterval);
+
 	wavesurferMini_left = this._initWavesurfer('left', choices[0]);
 	wavesurferMini_right = this._initWavesurfer('right', choices[1]);
-	
+	/*
 	// check each second if player hasn't reached the end of file
 	if (wavesurferMini_left) {
 	    window.setInterval(function() {
@@ -176,10 +179,11 @@ class QuizView extends Observer {
 	if (wavesurferMini_right) {
 	    window.setInterval(function() {
 		if (wavesurferMini_right.backend.getPlayedPercents() == 1) {
-		    pauseMiniSprite();
+		    // pauseMiniSprite();
 		}
 	    }, 1000);
 	}
+	*/
     }
     
     _initWavesurfer(elName, choice) {
