@@ -296,10 +296,12 @@ h1.question {
 
 #footerCredits {
     font-size: 9pt;
-    color:#999;
-    height: 1.5em;
+    color: #999;
+    height: 3em;
     width: 100%;
     text-align: center;
+    margin: 1em;
+    padding: 0 4em 0 4em;
 }
 
 #footerCredits a {
