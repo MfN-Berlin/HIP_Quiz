@@ -239,7 +239,7 @@
 	},
 	{
 	    "qid": 10,
-	    "text": "Ein weiterer Krebs kann mit seinen Geräuschen beeindrucken. Das Knarzen des Hummers wird durch eine Art eingebaute Raspel erzeugt, über die er streicht.",
+	    "text": "Das Knarzen des Hummers wird durch eine Art eingebaute Raspel erzeugt, über die er streicht.",
 	    "correct": {
 		"label": "Hummer",
 		"audio": "hummer.mp3",

@@ -150,7 +150,7 @@ class QuizView extends Observer {
 	    .addEventListener('click', toggle);
 	// check each second if player hasn't reached the end of file
 	this._initPlayerInterval = window.setInterval(function() {
-            if (wavesurfer_1.backend.getPlayedPercents() == 1) {
+            if (wavesurfer_1.backend.getPlayedPercents() == 0.1) {
 		showControls();
 		enableAnswerButtons();
 	    }

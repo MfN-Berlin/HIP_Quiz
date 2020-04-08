@@ -23,7 +23,7 @@ class FooterView extends Observer {
 	} else if (progress.quizStarted() && progress.state == null) {
 	    // quiz has started, show question
 	    this.clear();
-	    this.showPlaceholder(progress);
+	    this.showQuestion(progress);
 	    
 	} else if (progress.quizStarted() && progress.state != null) {
 	    // question was answered, show feedback
@@ -46,7 +46,12 @@ class FooterView extends Observer {
 	var placeholder = this._drawPlaceholder(progress);
 	document.getElementById("footer").innerHTML = placeholder;
     }
-
+    
+    showQuestion(progress) {
+	var footerEl = this._drawFooter(progress);
+	document.getElementById("footer").innerHTML = footerEl;	
+    }
+    
     showQuestionFeedback(progress) {
 	var footerEl = this._drawFooter(progress);
 	document.getElementById("footer").innerHTML = footerEl;	
