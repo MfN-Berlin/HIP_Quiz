@@ -1,8 +1,8 @@
 /**
-Javacript View for the Quiz
+   Javacript View for the Quiz
 
-@see https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine/tree/master/docs
-*/
+   @see https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine/tree/master/docs
+ */
 
 class FooterView extends Observer {
     
@@ -48,8 +48,8 @@ class FooterView extends Observer {
     }
     
     showQuestion(progress) {
-	var footerEl = this._drawFooter(progress);
-	document.getElementById("footer").innerHTML = footerEl;	
+	var placeholder = this._drawPlaceholder(progress);
+	document.getElementById("footer").innerHTML = placeholder;	
     }
     
     showQuestionFeedback(progress) {
@@ -75,7 +75,7 @@ class FooterView extends Observer {
 
     _drawPlaceholder(progress) {
 	return `
-          <div id="footerFill"></div>`;
+          <div id="footerFill">${this._drawCredits(progress)}</div>`;
     }
     
     _drawButton(id, label, action) {

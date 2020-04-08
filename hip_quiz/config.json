@@ -5,16 +5,16 @@
 	"start": "<p>Unter der Meeresoberfläche ist es nie still. Vielfältige Geräusche sind in der Unterwasserwelt ständig präsent und werden natürlicherweise durch Wind, Wellen, Eis und Donner sowie von Tieren erzeugt.</p><p>Der Mensch beeinflusst die Meeresumwelt durch unterschiedlichste Aktivitäten. Die Ozeane werden durch die Zufuhr von Schadstoffen, Schwermetallen, Nährstoffen, Plastikmüll, aber auch durch Lärm schwer belastet.</p><p>Vor allem die Schifffahrt, das Erkunden von Rohstoffen im Meeresboden, militärische Aktivitäten sowie der Bau von Windkraftanlagen und Bohrinseln trägt zum Lärm im Meer bei.</p>",
 	"help" : "Zum Spielen einfach das Hörbeispiel starten und die richtige Lösung mit Klick auf das Bild auswählen!",
 	"help_long" : "<h1>Spielerklärung</h1> Es wird gespielt, indem man sich das Hörbeispiel anhört und danach eine der beiden Antwortmöglichkeiten auswählt, indem man auf das entsprechende Bild klickt. Zum Fortfahren wird der \"Weiter\" Button genutzt.<p>Die Hörbeispiele werden entweder automatisch abgespielt, oder können über den \"Play\" Button gestartet werden. Der \"Stop\" Button kann die Wiedergabe jederzeit beenden.</p><p>Gelegentlich erscheint nach erfolgter Beantwortung einer Frage auch ein \"Gegenbeispiel\" Button. Dieser spielt ein Hörbeispiel der falschen Antwortmöglichkeit ab.</p><p>Nach beantwortung aller Fragen erfolgt eine kurze Auswertung.</p><h1>Zusätliche Schaltflächen</h1>Der \"Schliessen\" Button schliesst das Programm.<p>Mit dem \"?\" Button kann man sich diese Programmhilfe jederzeit wieder anzeigen lassen.</p><p>Bei weiteren Fragen wenden Sie sich bitte an einen Mitarbeiter des Meeresmuseums. Er wird ihnen gerne weitere Fragen beantworten.</p>",
-	"correct": "Richtig!",
+	"correct": "Richtig",
 	"wrong": "Die richtige Lösung lautet:",
 	"feedback_mittel":"Bitte versuche es noch einmal.",
-	"feedback_gut":"Sehr beeindruckend!",
-	"feedback_alles_richtig":"Fantastisch! Du hast alle Fragen richtig beantwortet!",
+	"feedback_gut":"Sehr beeindruckend",
+	"feedback_alles_richtig":"Fantastisch. Du hast alle Fragen richtig beantwortet",
 	"button_start": "Spiel starten",
 	"button_restart": "Neues Spiel spielen",
 	"button_quit": "Spiel beenden",
 	"main_credits": "Idee und Medienauswahl: Dr. Michael Dähne, Deutsches Meeresmuseum. Entwicklung: Alvaro Ortiz Troncoso, Museum für Naturkunde Berlin. Audiobearbeitung: Tina Birnbach, Museum für Naturkunde Berlin ",
-	"credits": "Mediennachweis"
+	"credits": "Bildnachweis"
     },
     "settings" : {
 	"num_questions" : 6
@@ -22,7 +22,7 @@
     "questionnaire" : [
 	{
 	    "qid": 1,
-	    "text": "Die tiefen Grunzlaute nutzt der Finnwal, um sich über Kilometer hinweg zu verständigen!",
+	    "text": "Die tiefen Grunzlaute nutzt der Finnwal, um sich über Kilometer hinweg zu verständigen",
 	    "correct": {
 		"label": "Finnwal",
 		"audio": "finnwal.mp3",
@@ -95,7 +95,7 @@
 	},
 	{
 	    "qid": 4,
-	    "text": "Der Schweinswal nutzt Echoortung um sich Unterwasser zu orientieren. Dafür verarbeitet sein Hirn die Echos von sehr hohen Klicklauten, welche er selbst aussendet, zu einem Bild. Er sieht mit seinem Gehör!",
+	    "text": "Der Schweinswal nutzt Echoortung um sich Unterwasser zu orientieren. Dafür verarbeitet sein Hirn die Echos von sehr hohen Klicklauten, welche er selbst aussendet, zu einem Bild. Er sieht mit seinem Gehör",
 	    "correct": {
 		"label": "Schweinswal",
 		"audio": "schweinswal.mp3",
