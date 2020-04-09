@@ -75,7 +75,7 @@ class FooterView extends Observer {
 
     _drawPlaceholder(progress) {
 	return `
-          <div id="footerFill">${this._drawCredits(progress)}</div>`;
+          <div id="footerFill"></div>${this._drawCredits(progress)}`;
     }
     
     _drawButton(id, label, action) {
@@ -152,7 +152,8 @@ class FooterView extends Observer {
           <div id="margin_left" class="column"></div>    
           <div id="footer_left" class="column" style="padding-top: 2em;flex: 35%">${quitButton}</div>
           <div id="footer_right" class="column" style="flex: 35%; margin-left: 1em;">${restartButton}</div>
-          <div id="margin_right" class="column"></div>    
+          <div id="margin_right" class="column"></div>
+          <div id="footerCredits">${this.ui.end_credits}</div>
         `;
 	return footerEl;
     }

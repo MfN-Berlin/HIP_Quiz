@@ -148,11 +148,16 @@ class QuizView extends Observer {
 	document
 	    .querySelector('[data-action="play_1"]')
 	    .addEventListener('click', toggle);
+	// check each second if player has started
+	this._initPlayerInterval = window.setInterval(function() {
+            if (wavesurfer_1.backend.getPlayedPercents() > 0) {
+		enableAnswerButtons();
+	    }
+	}, 1000);
 	// check each second if player hasn't reached the end of file
 	this._initPlayerInterval = window.setInterval(function() {
-            if (wavesurfer_1.backend.getPlayedPercents() > 0.1) {
+            if (wavesurfer_1.backend.getPlayedPercents() == 1) {
 		showControls();
-		enableAnswerButtons();
 	    }
 	}, 1000);
     }
@@ -286,19 +291,19 @@ class QuizView extends Observer {
 	if (progress.qCorrect == progress.qTotal) {
 	    textEl = `
               <p class="quizFeedbackText">${this.ui.feedback_alles_richtig}</p>
-              <p class="score">Es wurden alle Fragen richtig beantwortet!</p>
+              <p class="score">Es wurden alle Fragen richtig beantwortet</p>
             `;
 
 	} else if (progress.qCorrect > discriminant) {
 	    textEl = `
               <p class="quizFeedbackText">${this.ui.feedback_gut}</p>
-              <p class="score">Es wurden ${progress.qCorrect} von ${progress.qTotal} Fragen richtig beantwortet!</p>
+              <p class="score">Es wurden ${progress.qCorrect} von ${progress.qTotal} Fragen richtig beantwortet</p>
             `;
 
 	} else {
 	    textEl = `
               <p class="quizFeedbackText">${this.ui.feedback_mittel}</p>
-              <p class="score">Es wurden ${progress.qCorrect} von ${progress.qTotal} Fragen richtig beantwortet!</p>
+              <p class="score">Es wurden ${progress.qCorrect} von ${progress.qTotal} Fragen richtig beantwortet</p>
             `;
 	}
 	responseEl = `
