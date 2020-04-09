@@ -369,9 +369,73 @@ h1.question {
     margin-left: auto;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
     .wrapper {
 	padding: 0.5em;
+    }
+    #margin_left, #header_margin_left {
+        flex: 0 0 12%;
+    }
+    #header_progress {
+        flex: 0 0 70%;
+    }
+    #margin_right, #header_margin_right {
+        flex: 0 0 15%;
+    }
+    /*Disable flex in main content column*/
+    div.row {
+        display: block;
+    }
+    #game_header {
+        display: flex;
+    }
+    #left {
+        margin-top: 0;
+        padding-left: 2em;
+    }
+    #right {
+        text-align: center;
+    }
+    #player_1 {
+        min-height: 160px;
+    }
+    .answ_left {
+        margin-top: 1em;
+    }
+    .answ_right {
+        margin-top: 1.5em;
+    }
+    /*
+    #controls {
+        margin-left: 35%;
+        margin-top: 25px;
+    }
+*/
+    .answ_button {
+        margin: auto;
+    }
+    #left img {
+        max-width: 50%;
+        margin: auto;
+    }
+    .footer {
+        margin-top: 0;
+    }
+    #footer_left {
+        padding-left: 1em;
+        margin-top: 1em;
+    }
+    #footer_right {
+        padding: 0.5em 1em 1em 1em;        
+    }
+    #footerCredits {
+        padding: 0;
+        min-height: 3em;
+        margin: auto;
+        height: auto;
+    }
+    .score {
+        text-align: center;
     }
 }
 
