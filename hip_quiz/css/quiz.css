@@ -272,7 +272,8 @@ h1.question {
     font-size: 12pt;
 }
 
-#footer_left h2 {
+#footer_left h2, #footer_left h2 i {
+    font-family: Roboto, sans-serif!important;
     font-weight: bold;
     font-size: 12pt;
     padding-top: 1em;
@@ -368,6 +369,9 @@ h1.question {
     max-width: 200px;
     margin-left: auto;
 }
+.score {
+    text-align: center;
+}
 
 @media (max-width: 480px) {
     .wrapper {
@@ -380,7 +384,7 @@ h1.question {
         flex: 0 0 70%;
     }
     #margin_right, #header_margin_right {
-        flex: 0 0 15%;
+        flex: 0 0 12%;
     }
     /*Disable flex in main content column*/
     div.row {
@@ -414,9 +418,14 @@ h1.question {
     .answ_button {
         margin: auto;
     }
+    .button {
+        font-size: 11pt;
+    }
     #left img {
+        display: none;
         max-width: 50%;
         margin: auto;
+        object-fit: cover;
     }
     .footer {
         margin-top: 0;
@@ -433,9 +442,6 @@ h1.question {
         min-height: 3em;
         margin: auto;
         height: auto;
-    }
-    .score {
-        text-align: center;
     }
 }
 

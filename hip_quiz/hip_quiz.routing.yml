@@ -1,4 +1,4 @@
-audiogrambase.content:
+hip_quiz.content:
   path: '/quiz'
   defaults:
     _controller: '\Drupal\hip_quiz\Controller\QuizController::play'
