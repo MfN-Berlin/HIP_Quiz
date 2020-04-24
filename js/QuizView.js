@@ -55,7 +55,7 @@ class QuizView extends Observer {
     showCurrentQuestion(progress) {
 	// question, player and wave
 	var playerEl = this._drawPlayer();
-	var questionEl = `<h1 class="question">${this.ui.title}</h1>${playerEl}`;
+	var questionEl = `<h1 class="question">${this.ui.title_question}</h1>${playerEl}`;
 	document.getElementById("left").innerHTML = questionEl;
 
 	// read the choices for the current question
