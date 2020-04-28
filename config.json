@@ -72,7 +72,7 @@
 	},
 	{
 	    "qid": 3,
-	    "text": "Auch Unterwasser hört man den Knall eines Blitzes. Und da sich Schallwellen im Wasser wesentlich schneller ausbreiten als an Land sogar in einem noch größeren Umfeld.",
+	    "text": "Auch Unterwasser hört man den Einschlag eines Blitzes. Und da sich Schallwellen im Wasser wesentlich schneller ausbreiten als an Land sogar in einem noch größeren Umfeld.",
 	    "correct": {
 		"label": "Blitz",
 		"audio": "blitz.mp3",
@@ -97,7 +97,7 @@
 	},
 	{
 	    "qid": 4,
-	    "text": "Der Schweinswal nutzt Echoortung um sich Unterwasser zu orientieren. Dafür verarbeitet sein Hirn die Echos von sehr hohen Klicklauten, welche er selbst aussendet, zu einem Bild. Er sieht mit seinem Gehör",
+	    "text": "Der Schweinswal nutzt Echoortung um sich Unterwasser zu orientieren. Dafür verarbeitet sein Hirn die Echos von sehr hohen Klicklauten, welche er selbst aussendet, zu einem Bild. Er sieht mit seinem Gehör.",
 	    "correct": {
 		"label": "Schweinswal",
 		"audio": "schweinswal.mp3",
@@ -171,7 +171,7 @@
 	    "qid": 7,
 	    "text": "Die Laute des Motors und der durch das Wasser wirbelnden Schiffschraube produzieren einen riesigen Lärm, der durch die gute Schallwellenübertragungsfähigkeit des Wassers noch weithin hörbar ist.",
 	    "correct": {
-		"label": "Boot",
+		"label": "Motorboot",
 		"audio": "boot.mp3",
 		"image": {
 		    "file": "boot.jpg",
@@ -313,7 +313,7 @@
 	},
 	{
 	    "qid": 13,
-	    "text": "Das waren Paarungslaute eines Walrossmännchens - das ein Spieler die schon mal gehört hat, kommt selten vor. Im Gegenbeispiel wird im Verlauf ein Blasenschleier aktiviert um den Lärmpegel des Baustelle zu senken.",
+	    "text": "Das waren Paarungslaute eines Walrossmännchens - das ein Spieler die schon mal gehört hat, kommt selten vor. Im Gegenbeispiel wird im Verlauf ein Blasenschleier aktiviert um den Lärmpegel der Baustelle zu senken.",
 	    "correct": {
 		"label": "Walross",
 		"audio": "walross.mp3",
@@ -332,6 +332,151 @@
 		    "credit": "Ad Meskens",
 		    "license": "CC BY-SA 3.0",
 		    "link": "https://commons.wikimedia.org/wiki/File:Prinses_Amalia_windmolenpark_4.jpg?uselang=nl"
+		}
+	    }
+	},
+	{
+	    "qid": 14,
+	    "text": "Airguns sind Schallkanonen, die mit aufeinanderfolgenden Explosionen Luft in die Wassersäule schießen und mehrere Kilometer in den Meeresboden eindringen um Erdöl- und Gasvorkommen zu finden.",
+	    "correct": {
+		"label": "Airgun",
+		"audio": "airgun.mp3",
+		"image": {
+		    "file": "airgun2.jpg",
+		    "credit": "Dr. Hannes Grobe, Alfred Wegener Institute for Polar and Marine Research, Bremerhaven",
+		    "license": "CC BY-SA",
+		    "link": "https://en.wikipedia.org/wiki/Seismic_source#/media/File:Air_gun_hg.jpg"
+		    
+		}
+	    },
+	    "wrong": {
+		"label": "Blitz",
+		"audio": "blitz.mp3",
+		"image": {
+		    "file": "blitz2.jpg",
+		    "credit": "Ian Boggs",
+		    "license": "CC BY",
+		    "link": "https://commons.wikimedia.org/wiki/Lightning?uselang=de#/media/File:Phatman_-_Lightning_on_the_Columbia_River_(by-sa).jpg"
+		}
+	    }
+	},
+	{
+	    "qid": 15,
+	    "text": "Sonare machen das Unsichtbare sichtbar. Durch Aussenden von Schallwellen und dem Empfangen von Echos zeigen Sonare den Schiffsführern unterschiedliche Entfernungen an. Daraus werden auf Monitoren Fischschwärme, Wracks, U-Boote oder Untiefen sichtbar.",
+	    "correct": {
+		"label": "Sonar",
+		"audio": "sonar.mp3",
+		"image": {
+		    "file": "sonar.jpg",
+		    "credit": "NOAA",
+		    "license": "Gemeinfrei",
+		    "link": "https://oceanservice.noaa.gov/gallery/image.php?siteName=nosimages&cat=Multibeam%20Sonar"
+		}
+	    },
+	    "wrong": {
+		"label": "Finnwal",
+		"audio": "finnwal.mp3",
+		"image": {
+		    "file": "finnwal.jpg",
+		    "credit": "Aqqa Rosing-Asvid - Visit Greenland",
+		    "license": "CC BY",
+		    "link": "https://en.wikipedia.org/wiki/Fin_whale#/media/File:Finhval_(1).jpg"
+		}
+	    }
+	},
+	{
+	    "qid": 16,
+	    "text": "Für den Bau von Offshore-Windkraftanlagen oder Plattformen für die Öl- und Gasförderung werden Pfeiler mehr als 50 Meter tief in den Meeresboden gerammt. Mit mehreren tausend Schlägen vergehen Tage bis ein Pfeiler mit bis zu neun Meter Durchmesser im Boden verankert ist.",
+	    "correct": {
+		"label": "Pfahlgründung",
+		"audio": "pfahlgruendung.mp3",
+		"image": {
+		    "file": "pfahlgruendung.jpg",
+		    "credit": "Ad Meskens",
+		    "license": "CC BY-SA 3.0",
+		    "link": "https://commons.wikimedia.org/wiki/File:Prinses_Amalia_windmolenpark_4.jpg?uselang=nl"
+		}
+	    },
+	    "wrong": {
+		"label": "Walross",
+		"audio": "walross.mp3",
+		"image": {
+		    "file": "walross.jpg",
+		    "credit": "Captain Budd Christman, NOAA Corps",
+		    "license": "Gemeinfrei",
+		    "link": "https://de.wikipedia.org/wiki/Walross#/media/Datei:Noaa-walrus22.jpg"
+		}
+	    }
+	},
+	{
+	    "qid": 17,
+	    "text": "Seebeben sind unterseeische Erdbeben. Durch z.B. Plattentektonik, Vulkanausbrüche und Explosionen kann der Meeresboden erschüttert werden.",
+	    "correct": {
+		"label": "Seebeben",
+		"audio": "seebeben.mp3",
+		"image": {
+		    "file": "seebeben.jpg",
+		    "credit": "Yamaguchi先生",
+		    "license": "CC BY-SA 3.0",
+		    "link": "https://es.wikipedia.org/wiki/Sism%C3%B3grafo#/media/Archivo:Kinemetrics_seismograph.jpg"
+		}
+	    },
+	    "wrong": {
+		"label": "Eisbergkollision",
+		"audio": "eisbergkollision.mp3",
+		"image": {
+		    "file": "eisbergkollision.jpg",
+		    "credit": "Michael Haferkamp",
+		    "license": "CC BY-SA 3.0",
+		    "link": "https://commons.wikimedia.org/w/index.php?curid=12761708"
+		}
+	    }
+	},
+	{
+	    "qid": 18,
+	    "text": "Wenn Regen auf Wasseroberflächen trifft, hört man dies nicht nur an der Luft sondern auch unter Wasser.",
+	    "correct": {
+		"label": "Regen",
+		"audio": "regen.mp3",
+		"image": {
+		    "file": "regen.jpg",
+		    "credit": "jam343",
+		    "license": "CC BY",
+		    "link": "https://www.flickr.com"
+		}
+	    },
+	    "wrong": {
+		"label": "Pistolenkrebs",
+		"audio": "pistolenkrebs.mp3",
+		"image": {
+		    "file": "pistolenkrebs.jpg",
+		    "credit": "Steve Childs",
+		    "license": "CC BY 2.0",
+		    "link": "https://www.flickr.com/photos/11076453@N00/5386276787"
+		}
+	    }
+	},
+	{
+	    "qid": 19,
+	    "text": "Wir sind hier tatsächlich im Meer und nicht in einer Vogelvoliere. Die Pfiffe der Grindwale können ziemlich schrill klingen.",
+	    "correct": {
+		"label": "Grindwale",
+		"audio": "grindwale.mp3",
+		"image": {
+		    "file": "grindwale.jpg",
+		    "credit": "IWDG Marine Mammal Observer",
+		    "license": "CC BY-SA 3.0",
+		    "link": "https://commons.wikimedia.org/wiki/File:LF_Pilot_Whales_Goban_Spur.jpg"
+		}
+	    },
+	    "wrong": {
+		"label": "Papageien",
+		"audio": "papagei.mp3",
+		"image": {
+		    "file": "papageien2.jpg",
+		    "credit": "H.Zell",
+		    "license": "CC BY-SA 3.0",
+		    "link": "https://commons.wikimedia.org/wiki/File:Ara_ararauna_01.jpg?uselang=de"
 		}
 	    }
 	}
