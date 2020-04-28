@@ -118,7 +118,7 @@ class QuizView extends Observer {
     /****************************************************/
 
     _drawBranding() {
-	return `<img src="${this.ui.logo}" />`
+	return `<a href="#" onclick="controller.launch()"><img src="${this.ui.logo}"/></a>`;
     }
     
     /**
