@@ -15,6 +15,16 @@
     margin-bottom: 2em;
 }
 
+a.startimage {
+    border: none; 
+}
+a.startimage img {
+    opacity: 80%;
+}
+a.startimage img:hover {
+    opacity: 100%;
+}
+
 /*header*/
 #game_header {
     height: 50px;
