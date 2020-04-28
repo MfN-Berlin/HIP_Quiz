@@ -35,7 +35,7 @@
 	  model.addObserver(view);
 	  model.addObserver(progressView);
 	  model.addObserver(footerView);
-	  controller = new QuizController(model, view);
+	  controller = new QuizController(model);
 	  controller.loadConfiguration("/modules/custom/hip_quiz/config.json");
 	  // store UI texts in the view
 	  view.setUi(controller.uiTexts);
