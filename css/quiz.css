@@ -308,7 +308,6 @@ h1.question {
 #footerCredits {
     font-size: 9pt;
     color: #999;
-    height: 3.5em;
     width: 100%;
     text-align: center;
     margin: 1em;
@@ -459,3 +458,14 @@ h1.question {
     .wrapper {
     }
 }
+
+.standalone {
+    max-width: 1024px;
+    margin: auto;
+    margin-top: 2em;
+}
+
+.standalone .startimage img {
+    max-width: 300px;
+}
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" type="text/css" href="css/quiz.css" />
+    <script src="js/utils.js"></script>
+    <script src="js/Observer.js"></script>
+    <script src="js/Observable.js"></script>
+    <script src="js/Progress.js"></script>
+    <script src="js/Question.js"></script>
+    <script src="js/Answer.js"></script>
+    <script src="js/QuizModel.js"></script>
+    <script src="js/wavesurfer.js"></script>
+    <script src="js/wavesurfer.regions.js"></script>
+    <script src="js/hip.wavesurfer.spectrogram.js"></script>
+    <script src="js/player_actions.js"></script>
+    <script src="js/ProgressView.js"></script>
+    <script src="js/FooterView.js"></script>
+    <script src="js/QuizView.js"></script>
+    <script src="js/QuizController.js"></script>
+    <script src="js/local_configuration.js"></script>
+
+    <title>Test dein Wissen im Unterwasser Audio-Quiz!</title>
+  </head>
+  <body>
+    <script language="javascript">
+      /** Path to media folder */
+      const MEDIA_PATH = "media";
+      const IMG_PATH = "images";
+      
+      var controller; // controller should accessible for the page buttons
+      
+      // Instantiate MVC, load configuration, draw launch screen (model.reset)
+      document.addEventListener('DOMContentLoaded', function() {
+          try {
+	      var model = new QuizModel();
+	      var view = new QuizView();
+	      var progressView = new ProgressView();
+	      var footerView = new FooterView();
+	      model.addObserver(view);
+	      model.addObserver(progressView);
+	      model.addObserver(footerView);
+	      controller = new QuizController(model);
+              // standalone instance: configuration is included from local file
+	      controller.storeSettings(configuration);
+	      // store UI texts in the view
+	      view.setUi(controller.uiTexts);
+	      footerView.setUi(controller.uiTexts);
+
+	      model.reset();
+          } catch(err) {
+  	      console.log(err);
+  	      document.getElementById("messages").innerHTML += "Script error";
+          }
+      });
+    </script>
+
+    <div class="wrapper standalone">
+      <div id="game_header" class="row">
+        <div id="header_margin_left" class="column">&nbsp;</div>    
+        <div id="header_progress" class="column"></div>    
+        <div id="header_margin_right" class="column"></div>    
+      </div>
+      <div class="row">
+        <div id="margin_left" class="column"></div>    
+        <div id="left" class="column"></div>
+        <div id="right" class="column"></div>
+        <div id="margin_right" class="column"></div>    
+      </div>
+      <div id="footer" class="footer row">
+      </div>
+    </div>
+    <div id="messages"></div>
+
+</div>
+</div>
+
+</body>
+</html>

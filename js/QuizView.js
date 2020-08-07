@@ -1,5 +1,4 @@
-/** Path to media folder */
-const MEDIA_PATH = "/modules/custom/hip_quiz/media";
+
 var wavesurfer_1, wavesurferMini_left, wavesurferMini_right;
 var audiofile_1;
 var SpectrogramPlugin_1 = window.WaveSurfer.spectrogram;
@@ -240,7 +239,7 @@ class QuizView extends Observer {
             <div id="controls">
               <button class="playButton" data-action="play_1" id="1">
                 <svg class="buttonIcon Icon Icon--play" role="img">
-                  <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--play"></use>
+                  <use xlink:href="${IMG_PATH}/sprites.svg#Icon--play"></use>
                 </svg>
               </button>
             </div>
@@ -266,7 +265,7 @@ class QuizView extends Observer {
               <div id="controls">
                 <button class="miniplayButton" data-action="miniplay_${elName}" id="miniplay_${elName}">
                   <svg class="minibuttonIcon Icon Icon--playpause" role="img">
-                    <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--playpause"></use>
+                    <use xlink:href="${IMG_PATH}/sprites.svg#Icon--playpause"></use>
                   </svg>
                 </button>
               </div>
@@ -281,7 +280,7 @@ class QuizView extends Observer {
 
     
     _drawPinguinEl() {
-	return `<img class="feedbackImg" src="/modules/custom/hip_quiz/images/2010_07_16_11pinguine-ozeaneum_jm-schlorke-7748.jpg">`;
+	return `<img class="feedbackImg" src="${IMG_PATH}/2010_07_16_11pinguine-ozeaneum_jm-schlorke-7748.jpg">`;
     }
     
     _drawQuizFeedback(progress) {

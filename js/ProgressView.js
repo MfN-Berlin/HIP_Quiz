@@ -76,7 +76,7 @@ class ProgressView extends Observer {
 	return `
           <div id="close" onclick="controller.quit()">
             <svg class="icon" role="img">
-              <use xlink:href="/modules/custom/hip_quiz/images/sprites.svg#Icon--close"></use>
+              <use xlink:href="${IMG_PATH}/sprites.svg#Icon--close"></use>
             </svg>
           </div>`;
     }

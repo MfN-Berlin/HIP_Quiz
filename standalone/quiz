@@ -1,0 +1,2 @@
+#!/bin/bash
+firefox -url files/quiz.html

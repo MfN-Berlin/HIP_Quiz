@@ -1,7 +1,7 @@
 /**
-Javacript Controller for the Quiz
+   Javacript Controller for the Quiz
 
-@see https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine/tree/master/docs
+   @see https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine/tree/master/docs
 */
 
 class QuizController {
@@ -36,6 +36,10 @@ class QuizController {
 	    });
 	    return json;
 	})();
+        this.storeSettings(configuration);
+    }
+
+    storeSettings(configuration) {
 	// store settings in the controller
 	this.settings = configuration.settings;
 	this.questionnaire = [];
@@ -129,4 +133,3 @@ class QuizController {
     }
     
 }
-

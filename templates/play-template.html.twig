@@ -2,7 +2,7 @@
     @see https://code.naturkundemuseum.berlin/Alvaro.Ortiz/Pinguine/tree/master/docs
   -->
 <link rel="stylesheet" type="text/css" href="/modules/custom/hip_quiz/css/quiz.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/modules/custom/hip_quiz/js/jquery.min.js"></script>
 <script src="/modules/custom/hip_quiz/js/utils.js"></script>
 <script src="/modules/custom/hip_quiz/js/Observer.js"></script>
 <script src="/modules/custom/hip_quiz/js/Observable.js"></script>
@@ -23,6 +23,10 @@
 
 
 <script language="javascript">
+  /** Path to media folder */
+  const MEDIA_PATH = "/modules/custom/hip_quiz/media";
+  const IMG_PATH = "/modules/custom/hip_quiz/images";
+  
   var controller; // controller should accessible for the page buttons
   
   // Instantiate MVC, load configuration, draw launch screen (model.reset)
