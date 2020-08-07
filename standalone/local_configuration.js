@@ -1,6 +1,6 @@
 var configuration = {
     "ui": {
-	"logo": "images/Audio-Quiz_Startseite.png",
+	"logo": "Audio-Quiz_Startseite.png",
 	"title": "Teste dein Wissen im Unterwasser Audio-Quiz!",
 	"start": "<p>Unter Wasser ist es immer still? Von wegen! Auch unter der Meeresoberfläche sind vielfältige Geräusche ständig präsent, die natürlicherweise durch Wind, Wellen, Eis und Donner sowie von Tieren erzeugt werden. Doch auch der Mensch beeinflusst die Unterwasserwelt durch unterschiedlichste Aktivitäten, die Geräusche erzeugen und belastet die Meeresumwelt mit Lärm.</p><p>Doch stammen wirklich alle der folgenden Klänge aus dem Meer? Teste dein Wissen im Audio-Quiz und finde heraus, welche Geräusche unter Wasser zu hören sind!</p>",
 	"help" : "Zum Spielen einfach das Hörbeispiel starten und die richtige Lösung mit Klick auf das Bild auswählen!",
