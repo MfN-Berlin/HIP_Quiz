@@ -15,3 +15,8 @@ Once in Firefox, click `F11` to toggle fullscreen mode. Adjust the size using th
 
 ## Setting the quiz to launch on startup
 Once the quiz is installed and configured, it is possible to launch the quiz in fullscreen mode when the machine starts up. Instructions vary depending on your operating system. For Windows 10, see https://docs.microsoft.com/en-us/windows/configuration/kiosk-shelllauncher
+
+## Links
+The online version of the Quiz is here: https://unterwasserlaerm.museumfuernaturkunde.berlin/quiz
+
+Technical contact: alvaro.ortiztroncoso@mfn-berlin.de

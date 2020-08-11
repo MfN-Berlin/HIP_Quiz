@@ -1,0 +1,20 @@
+#in_a_row {
+    color:#008b9d;
+}
+
+.correct #header_progress_current {
+    background-color: #008b9d;
+}
+
+.button {
+    border-color:#008b9d;
+    background-color:#008b9d;
+}
+
+.button:hover {
+    background-color:#008b9d;
+}
+
+.correct {
+    color: #008b9d;
+}
