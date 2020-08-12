@@ -19,5 +19,5 @@ Once the quiz is installed and configured, it is possible to launch the quiz in 
 * The quiz source code is here: https://github.com/MfN-Berlin/HIP_Quiz
 
 ## Kontakt
-* Technical contact: ALvaro Ortiz Troncoso alvaro.ortiztroncoso@mfn-berlin.de
+* Technical contact: Alvaro Ortiz Troncoso alvaro.ortiztroncoso@mfn-berlin.de
 * For inquiries about media licensing, contact Michael Daehne (at) meeresmuseum (dot) de
